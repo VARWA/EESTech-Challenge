@@ -1,6 +1,7 @@
 import 'package:eestech_challenge_app/main_screen/main_screen_widget.dart';
 import 'package:eestech_challenge_app/user_info/user_info_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../events_screen/event_screen_info.dart';
 
@@ -18,7 +19,9 @@ class MyApp extends StatelessWidget {
       }},
       initialRoute: '/main_screen/',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: const Color(0xff232935),
+        textTheme: GoogleFonts.interTextTheme(),
+
       ),
       home: Container(color: Colors.red),
     );

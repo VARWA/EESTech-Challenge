@@ -28,17 +28,21 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
         index: _selectedTab,
         children: [
           EventsMainScreen(),
-          Text("Сериалы"),
+          // Text("Задачи"),
+          Text("Теория"),
           UserInfoWidget(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTab,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.access_alarm_outlined), label: 'События'),
-          BottomNavigationBarItem(icon: Icon(Icons.task_alt_outlined), label: "Задачи"),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: "Профиль"),
-
+          BottomNavigationBarItem(
+              icon: Icon(Icons.access_alarm_outlined), label: 'События'),
+          // BottomNavigationBarItem(
+          //     icon: Icon(Icons.task_alt_outlined), label: "Задачи"),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Теория"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_outlined), label: "Профиль"),
         ],
         onTap: onSelectedTab,
       ),

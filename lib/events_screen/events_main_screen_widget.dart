@@ -24,23 +24,7 @@ class _EventsMainScreenState extends State<EventsMainScreen> {
         itemBuilder: (BuildContext context, int index) {
           final event = EventListLocal.eventsExampleList[index];
           return Container(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
-              child: Card(
-                clipBehavior: Clip.hardEdge,
-                child: InkWell(
-                  splashColor: Colors.blue.withAlpha(30),
-                  onTap: () {
-                    debugPrint('ev'); //todo переход на экран события
-                  },
-                  child: SizedBox(
-                    width: double.infinity,
-                    height: 300,
-                    child: Text(event.title),
-                  ),
-                ),
-              ),
-            ),
+            height: 3,
           );
         },
       ),
