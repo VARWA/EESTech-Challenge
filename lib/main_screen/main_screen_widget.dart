@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:eestech_challenge_app/events_screen/events_main_screen_widget.dart';
 import 'package:eestech_challenge_app/user_info/user_info_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
       body: IndexedStack(
         index: _selectedTab,
         children: [
-          Text("Новости"),
+          EventsMainScreen(),
           Text("Сериалы"),
           UserInfoWidget(),
         ],
