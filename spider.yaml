@@ -30,9 +30,9 @@ use_references_list: false
 package: resources
 
 groups:
-  - path: images
+  - path: images/events_photos
     class_name: EventImages
-    types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
-#  - path: assets/images/user_photos
-#    class_name: UserImages
-#    types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
+    types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp]
+  - path: images/other
+    class_name: OtherImages
+    types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp]
