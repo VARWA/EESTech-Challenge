@@ -43,7 +43,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           BottomNavigationBarItem(icon: Icon(Icons.book), label: "Теория"),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle_outlined), label: "Профиль"),
-        ],
+        ],backgroundColor: Color.fromRGBO(230, 230, 230, 1),
         onTap: onSelectedTab,
       ),
     );

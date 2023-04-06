@@ -1,3 +1,4 @@
+import 'package:eestech_challenge_app/auth_screen/auth_screen_widget.dart';
 import 'package:eestech_challenge_app/main_screen/main_screen_widget.dart';
 import 'package:eestech_challenge_app/user_info/user_info_widget.dart';
 import 'package:flutter/material.dart';
@@ -12,16 +13,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      routes: {'/main_screen/': (context) => MainScreenWidget(),
-      '/main_screen/event_info': (context) {
-        final index = ModalRoute.of(context)?.settings.arguments;
-        return EventScreenInfo(index: index);
-      }},
-      initialRoute: '/main_screen/',
+      routes: {
+        '/auth_screen/': (context) => AuthWidget(),
+        '/main_screen/': (context) => MainScreenWidget(),
+        '/main_screen/event_info': (context) {
+          final index = ModalRoute.of(context)?.settings.arguments;
+          return EventScreenInfo(index: index);
+        }
+      },
+      initialRoute: '/auth_screen/',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xff232935),
         textTheme: GoogleFonts.interTextTheme(),
-
       ),
       home: Container(color: Colors.red),
     );
