@@ -1,3 +1,4 @@
+
 import 'package:eestech_challenge_app/events_screen/events_examples.dart';
 import 'package:eestech_challenge_app/theme_colors.dart';
 import 'package:flutter/material.dart';
@@ -19,38 +20,86 @@ class EventOnListWidget extends StatelessWidget {
     }
   }
 
+  bool _CheckIsEnded({required endDate}) {
+    final parsedEventDate = endDate.split('.');
+    final year = int.parse("20" + parsedEventDate[2]);
+    final month = int.parse(parsedEventDate[1]);
+    final day = int.parse(parsedEventDate[0]);
+
+    final dateNow = DateTime.now();
+    final dateEvent = DateTime.utc(year, month, day);
+    if (dateNow.isBefore(dateEvent)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final _isEnded = _CheckIsEnded(endDate: event.endDate);
     final finalDate = _date(event: event);
-    return Container(
-      height: 155,
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        color: Mycolors.ColorOfWidgetsBackgroundLight1,
-        borderRadius: BorderRadius.all(
-          Radius.circular(10),
+    return Stack(
+      children: [
+        Container(
+          height: 155,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            color: Mycolors.ColorOfWidgetsBackgroundLight1,
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const SizedBox(height: 13),
+                MainTitleEventWidget(event: event),
+                const SizedBox(height: 5),
+                FirstSubtitleEventWidget(
+                    event: event, subTitleStyle: _subTitleStyle),
+                SecondSubtitleEventWidget(
+                    finalDate: finalDate, subTitleStyle: _subTitleStyle),
+                ThirdSubtitleEventWidget(
+                    event: event, subTitleStyle: _subTitleStyle),
+                FourthSubtitleEventWidget(
+                    event: event, subTitleStyle: _subTitleStyle),
+              ],
+            ),
+          ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SizedBox(height: 13),
-            MainTitleEventWidget(event: event),
-            const SizedBox(height: 5),
-            FirstSubtitleEventWidget(
-                event: event, subTitleStyle: _subTitleStyle),
-            SecondSubtitleEventWidget(
-                finalDate: finalDate, subTitleStyle: _subTitleStyle),
-            ThirdSubtitleEventWidget(
-                event: event, subTitleStyle: _subTitleStyle),
-            FourthSubtitleEventWidget(
-                event: event, subTitleStyle: _subTitleStyle),
-          ],
-        ),
-      ),
+        Positioned(
+            bottom: 12.8,
+            right: 10.5,
+            child: LockWidget(
+              isEnded: _isEnded,
+            ))
+      ],
     );
+  }
+}
+
+class LockWidget extends StatelessWidget {
+  final bool isEnded;
+
+  LockWidget({Key? key, required bool this.isEnded}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (!isEnded) {
+      return Icon(
+        Icons.lock_open_outlined,
+        color: Mycolors.BlueOnLogo,
+      );
+    } else {
+      return Icon(
+        Icons.lock_outline,
+        color: Mycolors.RedOnLogo,
+      );
+    }
+    ;
   }
 }
 
@@ -167,7 +216,7 @@ class MainTitleEventWidget extends StatelessWidget {
     return Text(
       event.title,
       // https://medium.com/@pinkesh.earth/flutter-quick-tip-how-to-set-text-background-color-with-curve-d40a2f96a415
-      style:  TextStyle(
+      style: TextStyle(
         fontWeight: FontWeight.w700,
         fontSize: 25,
         background: Paint()

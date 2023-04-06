@@ -30,7 +30,7 @@ class _EventsMainScreenState extends State<EventsMainScreen> {
         if (index == 0) {
           return Column(
             children: [
-              TitleOfEventsMenu(),
+              const TitleOfEventsMenu(),
               Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 22, horizontal: 22),

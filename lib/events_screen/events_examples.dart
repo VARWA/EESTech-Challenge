@@ -16,8 +16,8 @@ class EventExampleList {
     Event(
         id: 1,
         title: "Лучший мем",
-        startDate: '13.04.23',
-        endDate: '17.04.23',
+        startDate: '13.04.20',
+        endDate: '17.04.20',
         points: 300,
         place:
             'Октябрьская набережная, дом 10, корпус 1, строение 1, помещение 9-Н, Санкт-Петербург',
@@ -30,7 +30,7 @@ class EventExampleList {
         id: 2,
         title: "Конкурс фото",
         startDate: '9.04.23',
-        endDate: '10.04.23',
+        endDate: '10.06.23',
         points: 100,
         place:
         'Октябрьская набережная, дом 10, корпус 1, строение 1, помещение 9-Н, Санкт-Петербург',
@@ -42,8 +42,8 @@ class EventExampleList {
     Event(
         id: 3,
         title: "Конкурс фото 2",
-        startDate: '9.04.23',
-        endDate: '10.04.23',
+        startDate: '9.04.22',
+        endDate: '10.04.22',
         points: 100,
         place:
         'Октябрьская набережная, дом 10, корпус 1, строение 1, помещение 9-Н, Санкт-Петербург',
