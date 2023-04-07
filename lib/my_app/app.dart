@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       },
       initialRoute: '/auth_screen/',
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xff232935),
+        scaffoldBackgroundColor: const Color(0xff232935), //t
         textTheme: GoogleFonts.interTextTheme(),
       ),
       home: Container(color: Colors.red),
