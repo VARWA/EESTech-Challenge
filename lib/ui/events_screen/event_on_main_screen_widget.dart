@@ -1,7 +1,8 @@
 
-import 'package:eestech_challenge_app/events_screen/events_examples.dart';
-import 'package:eestech_challenge_app/theme_colors.dart';
+import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
 import 'package:flutter/material.dart';
+
+import 'events_examples.dart';
 
 class EventOnListWidget extends StatelessWidget {
   final Event event;
@@ -220,7 +221,7 @@ class MainTitleEventWidget extends StatelessWidget {
         fontWeight: FontWeight.w700,
         fontSize: 25,
         background: Paint()
-          ..strokeWidth = 30.0
+          ..strokeWidth = 10.0
           ..color = Mycolors.ColorOfTextsBackground1
           ..style = PaintingStyle.stroke
           ..strokeJoin = StrokeJoin.round,

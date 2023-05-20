@@ -1,10 +1,9 @@
-import 'package:eestech_challenge_app/auth_screen/auth_screen_widget.dart';
-import 'package:eestech_challenge_app/main_screen/main_screen_widget.dart';
-import 'package:eestech_challenge_app/user_info/user_info_widget.dart';
+import 'package:eestech_challenge_app/ui/main_screen/main_screen_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../events_screen/event_screen_info.dart';
+import '../ui/auth_screen/auth_screen_widget.dart';
+import '../ui/events_screen/event_screen_info.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -25,6 +24,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xff232935), //t
         textTheme: GoogleFonts.interTextTheme(),
+        colorSchemeSeed : Colors.green,
+        useMaterial3: true,
       ),
       home: Container(color: Colors.red),
     );

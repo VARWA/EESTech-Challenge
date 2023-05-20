@@ -8,8 +8,6 @@ class UserInfoWidget extends StatelessWidget {
     return ListView(
       children: [
         SizedBox(height: 30),
-
-
       ],
     );
   }

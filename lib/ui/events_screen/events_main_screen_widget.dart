@@ -1,8 +1,9 @@
-import 'package:eestech_challenge_app/events_screen/event_on_main_screen_widget.dart';
-import 'package:eestech_challenge_app/events_screen/events_examples.dart';
-import 'package:eestech_challenge_app/theme_colors.dart';
+import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'event_on_main_screen_widget.dart';
+import 'events_examples.dart';
 
 class EventsMainScreen extends StatefulWidget {
   const EventsMainScreen({Key? key}) : super(key: key);
@@ -19,14 +20,14 @@ class _EventsMainScreenState extends State<EventsMainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final EventListLocal = EventExampleList();
+    final eventListLocal = EventExampleList();
 
     return ListView.builder(
       scrollDirection: Axis.vertical,
       // shrinkWrap: true,
-      itemCount: EventListLocal.eventsExampleList.length,
+      itemCount: eventListLocal.eventsExampleList.length,
       itemBuilder: (BuildContext context, int index) {
-        final event = EventListLocal.eventsExampleList[index];
+        final event = eventListLocal.eventsExampleList[index];
         if (index == 0) {
           return Column(
             children: [
@@ -41,10 +42,11 @@ class _EventsMainScreenState extends State<EventsMainScreen> {
           );
         }
         return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 22),
-            child: EventOnListWidget(
-              event: event,
-            ));
+          padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 22),
+          child: EventOnListWidget(
+            event: event,
+          ),
+        );
       },
     );
   }
@@ -63,7 +65,6 @@ class TitleOfEventsMenu extends StatelessWidget {
         children: [
           SvgPicture.asset('images/other/logo.svg'),
           const SizedBox(height: 40),
-
           // SizedBox(height: 52),
           const EventTitle(),
         ],

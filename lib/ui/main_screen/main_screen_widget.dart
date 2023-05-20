@@ -1,9 +1,10 @@
-import 'dart:developer';
-
-import 'package:eestech_challenge_app/events_screen/events_main_screen_widget.dart';
-import 'package:eestech_challenge_app/theme_colors.dart';
-import 'package:eestech_challenge_app/user_info/user_info_widget.dart';
+import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
+import 'package:eestech_challenge_app/ui/education_screen/edu_themes_examples.dart';
+import 'package:eestech_challenge_app/ui/education_screen/education_main_screen_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../events_screen/events_main_screen_widget.dart';
+import '../user_info/user_info_widget.dart';
 
 class MainScreenWidget extends StatefulWidget {
   const MainScreenWidget({Key? key}) : super(key: key);
@@ -27,10 +28,10 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
     return Scaffold(
       body: IndexedStack(
         index: _selectedTab,
-        children: [
+        children:  const [
           EventsMainScreen(),
           // Text("Задачи"),
-          Text("Теория"),
+          MainListOfEducationWidget(),
           UserInfoWidget(),
         ],
       ),
@@ -38,7 +39,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
         currentIndex: _selectedTab,
         unselectedItemColor: Mycolors.BlueOnLogo,
         selectedItemColor: Mycolors.RedOnLogo,
-        items: [
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.access_alarm_outlined), label: 'События'),
           // BottomNavigationBarItem(
