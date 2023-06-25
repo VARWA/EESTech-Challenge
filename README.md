@@ -1,16 +1,34 @@
-# eestech_challenge_app
+___
 
-A new Flutter project.
+## Описание
 
-## Getting Started
+Нашей задачей было сделать приложение, которое помогало бы новым сотрудникам быстрее и проще влиться в рабочий процесс, освоив технику безопасности в формате игры. Дело в том, что долгое знакомство с правилами компаниями тормозит работу, а наше приложение способствовало бы облегчению его изучения.
+____
 
-This project is a starting point for a Flutter application.
+## Команда разработки 
 
-A few resources to get you started if this is your first Flutter project:
+| Mobile | Design | Backend |
+|----------|----------|----------|
+| Z   | Z   | Z |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+____
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Фреймворки
+	 - Flutter
+	 - Django
+
+____
+
+## Процесс выполнения проекта
+ - [x] Сделать дизайн в Figma
+ - [x] Сделать шаблон экрана со списком событий
+ - [x] Сделать шаблон экрана с теорией и практикой
+ - [ ] Сделать шаблон экрана с информацией о пользователе
+ - [ ] Сделать шаблон экрана с информацией  о событии
+ - [ ] Реализовать игровой процесс
+ - [ ] Реализовать сохранение данных после авторизации пользователя
+ - [ ] Добавить интернационализацию
+ - [ ] Подключить мобильное приложение с backend
+
+___ 
+## Screenshots
