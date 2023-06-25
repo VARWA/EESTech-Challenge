@@ -6,7 +6,7 @@ class UserInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [
+      children: const [
         SizedBox(height: 30),
       ],
     );
