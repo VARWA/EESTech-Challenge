@@ -11,14 +11,13 @@ class _AuthWidgetState extends State<AuthWidget> {
   final _loginController = TextEditingController(text: 'admin');
   final _passwordController = TextEditingController(text: 'admin');
 
-  void _check_auth() {
+  void _checkAuth() {
     final login = _loginController.text;
     final password = _passwordController.text;
     if (login == 'admin' && password == 'admin') {
       Navigator.of(context).pushReplacementNamed('/main_screen/');
-      final errorText = null;
     } else {
-      final errorText = "Неверный логин или пароль";
+      // const errorText = "Неверный логин или пароль";
     }
     setState(() {});
   }
@@ -49,7 +48,7 @@ class _AuthWidgetState extends State<AuthWidget> {
                 ),
               ),
               const SizedBox(height: 20),
-              ElevatedButton(onPressed: _check_auth, child: const Text("Войти"))
+              ElevatedButton(onPressed: _checkAuth, child: const Text("Войти"))
             ],
           ),
         ),

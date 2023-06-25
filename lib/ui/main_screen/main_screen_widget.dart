@@ -1,5 +1,5 @@
 import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
-import 'package:eestech_challenge_app/ui/education_screen/edu_themes_examples.dart';
+import 'package:eestech_challenge_app/examples_for_testing/edu_themes_examples.dart';
 import 'package:eestech_challenge_app/ui/education_screen/education_main_screen_widget.dart';
 import 'package:flutter/material.dart';
 

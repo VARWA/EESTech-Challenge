@@ -2,8 +2,8 @@ import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'event_on_main_screen_widget.dart';
-import 'events_examples.dart';
+import 'widgets/event_on_main_screen_widget.dart';
+import '../../examples_for_testing/events_examples.dart';
 
 class EventsMainScreen extends StatefulWidget {
   const EventsMainScreen({Key? key}) : super(key: key);
@@ -13,10 +13,10 @@ class EventsMainScreen extends StatefulWidget {
 }
 
 class _EventsMainScreenState extends State<EventsMainScreen> {
-  void _OnTapEvent(int index) {
-    Navigator.of(context)
-        .pushNamed('/main_screen/event_info', arguments: index);
-  }
+  // void _OnTapEvent(int index) {
+  //   Navigator.of(context)
+  //       .pushNamed('/main_screen/event_info', arguments: index);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -59,16 +59,14 @@ class TitleOfEventsMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset('images/other/logo.svg'),
-          const SizedBox(height: 40),
-          // SizedBox(height: 52),
-          const EventTitle(),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset('images/other/logo.svg'),
+        const SizedBox(height: 40),
+        // SizedBox(height: 52),
+        const EventTitle(),
+      ],
     );
   }
 }
