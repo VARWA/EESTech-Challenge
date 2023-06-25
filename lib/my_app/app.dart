@@ -12,9 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       routes: {
         '/auth_screen/': (context) => const AuthWidget(),
-        '/main_screen/': (context) => MainScreenWidget(),
+        '/main_screen/': (context) => const MainScreenWidget(),
         '/main_screen/event_info': (context) {
           final index = ModalRoute.of(context)?.settings.arguments;
           return EventScreenInfo(index: index);
