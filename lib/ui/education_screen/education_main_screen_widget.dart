@@ -53,5 +53,3 @@ class EducationBodyScreenWidget extends StatelessWidget {
     );
   }
 }
-
-

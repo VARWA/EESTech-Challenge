@@ -1,5 +1,3 @@
 import 'package:flutter/material.dart';
 
-class EventInfoScreenModel extends ChangeNotifier{
-
-}
+class EventInfoScreenModel extends ChangeNotifier {}

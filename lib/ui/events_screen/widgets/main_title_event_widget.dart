@@ -1,4 +1,3 @@
-
 import 'package:eestech_challenge_app/examples_for_testing/events_examples.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +21,7 @@ class MainTitleEventWidget extends StatelessWidget {
         fontSize: 25,
         background: Paint()
           ..strokeWidth = 10.0
-          ..color = Mycolors.ColorOfTextsBackground1
+          ..color = MyColors.colorOfTextsBackground1
           ..style = PaintingStyle.stroke
           ..strokeJoin = StrokeJoin.round,
         // backgroundColor: Mycolors.ColorOfTextsBackground1

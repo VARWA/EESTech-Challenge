@@ -1,5 +1,4 @@
 import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
-import 'package:eestech_challenge_app/examples_for_testing/edu_themes_examples.dart';
 import 'package:eestech_challenge_app/ui/education_screen/education_main_screen_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +27,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
     return Scaffold(
       body: IndexedStack(
         index: _selectedTab,
-        children:  const [
+        children: const [
           EventsMainScreen(),
           // Text("Задачи"),
           MainListOfEducationWidget(),
@@ -37,8 +36,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTab,
-        unselectedItemColor: Mycolors.BlueOnLogo,
-        selectedItemColor: Mycolors.RedOnLogo,
+        unselectedItemColor: MyColors.blueOnLogo,
+        selectedItemColor: MyColors.redOnLogo,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.access_alarm_outlined), label: 'События'),
@@ -47,7 +46,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           BottomNavigationBarItem(icon: Icon(Icons.book), label: "Теория"),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle_outlined), label: "Профиль"),
-        ],backgroundColor: Color.fromRGBO(230, 230, 230, 1),
+        ],
+        backgroundColor: const Color.fromRGBO(230, 230, 230, 1),
         onTap: onSelectedTab,
       ),
     );

@@ -51,7 +51,7 @@ class EventOnListWidget extends StatelessWidget {
           height: 155,
           width: double.infinity,
           decoration: const BoxDecoration(
-            color: Mycolors.ColorOfWidgetsBackgroundLight1,
+            color: MyColors.colorOfWidgetsBackgroundLight1,
             borderRadius: BorderRadius.all(
               Radius.circular(10),
             ),

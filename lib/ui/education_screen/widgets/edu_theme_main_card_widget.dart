@@ -1,3 +1,4 @@
+import 'package:eestech_challenge_app/ui/main_theory_module_screen/main_theory_module_screen_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:progresso/progresso.dart';
 
@@ -37,11 +38,24 @@ class EduThemeMainCardWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return MainTheoryModuleScreenWidget(
+                                id: eduThemeItem.id,
+                              );
+                            },
+                          ),
+                        );
+                      },
                       child: const Text('Теория'),
                     ),
                     const SizedBox(height: 15),
-                    Progresso(progress: eduThemeItem.theoryProgress / 100),
+                    Progresso(
+                      progress: eduThemeItem.theoryProgress / 100,
+                    ),
                     const SizedBox(height: 5),
                     Text('${eduThemeItem.theoryProgress}%'),
                   ],

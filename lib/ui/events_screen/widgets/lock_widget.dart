@@ -11,14 +11,13 @@ class LockWidget extends StatelessWidget {
     if (!isEnded) {
       return const Icon(
         Icons.lock_open_outlined,
-        color: Mycolors.BlueOnLogo,
+        color: MyColors.blueOnLogo,
       );
     } else {
       return const Icon(
         Icons.lock_outline,
-        color: Mycolors.RedOnLogo,
+        color: MyColors.redOnLogo,
       );
     }
-
   }
 }

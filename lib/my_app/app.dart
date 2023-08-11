@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xff232935), //t
         textTheme: GoogleFonts.interTextTheme(),
-        colorSchemeSeed : Colors.green,
+        colorSchemeSeed: Colors.green,
         useMaterial3: true,
       ),
       home: Container(color: Colors.red),

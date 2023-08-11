@@ -1,9 +1,10 @@
 import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
+import 'package:eestech_challenge_app/ui/events_screen/widgets/title_of_events_menu_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'widgets/event_on_main_screen_widget.dart';
 import '../../examples_for_testing/events_examples.dart';
+import 'widgets/event_on_main_screen_widget.dart';
 
 class EventsMainScreen extends StatefulWidget {
   const EventsMainScreen({Key? key}) : super(key: key);
@@ -33,11 +34,12 @@ class _EventsMainScreenState extends State<EventsMainScreen> {
             children: [
               const TitleOfEventsMenu(),
               Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 22, horizontal: 22),
-                  child: EventOnListWidget(
-                    event: event,
-                  ))
+                padding:
+                    const EdgeInsets.symmetric(vertical: 22, horizontal: 22),
+                child: EventOnListWidget(
+                  event: event,
+                ),
+              )
             ],
           );
         }
@@ -48,52 +50,6 @@ class _EventsMainScreenState extends State<EventsMainScreen> {
           ),
         );
       },
-    );
-  }
-}
-
-class TitleOfEventsMenu extends StatelessWidget {
-  const TitleOfEventsMenu({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SvgPicture.asset('images/other/logo.svg'),
-        const SizedBox(height: 40),
-        // SizedBox(height: 52),
-        const EventTitle(),
-      ],
-    );
-  }
-}
-
-class EventTitle extends StatelessWidget {
-  const EventTitle({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 48,
-      width: 278,
-      decoration: const BoxDecoration(
-        color: Mycolors.ColorOfWidgetsBackgroundLight1,
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-      ),
-      child: const Center(
-        child: Text(
-          'События',
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 40,
-          ),
-        ),
-      ),
     );
   }
 }
