@@ -36,9 +36,5 @@ ____
  - [ ] Добавить интернационализацию
  - [ ] Подключить мобильное приложение с backend
 
-___ 
-## Screenshots
-<img alt="image" src="https://github.com/VARWA/EESTech-Challenge/assets/60575285/12cfe701-a46b-4a11-b75d-c81dd5762940" width="200"/>
-<img alt="image" src="https://github.com/VARWA/EESTech-Challenge/assets/60575285/2d144527-eef0-4677-802b-892b683bf231" width="200"/>
 
 
