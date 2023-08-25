@@ -1,6 +1,8 @@
 import 'package:beamer/beamer.dart';
 import 'package:eestech_challenge_app/config/theme/light_theme.dart';
 import 'package:eestech_challenge_app/ui/main_screen/main_screen_widget.dart';
+import 'package:eestech_challenge_app/ui/unknown_screen/unknown_screen_widget.dart';
+
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,6 +13,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '*': (context, state, data) => const MainScreenWidget(),
       },
+    ),
+    notFoundPage: const BeamPage(
+      title: 'Неизвестная страница',
+      child: UnknownScreenWidget(),
     ),
   );
 

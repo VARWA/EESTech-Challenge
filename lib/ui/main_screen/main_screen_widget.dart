@@ -55,6 +55,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
       currentIndex = 1;
     } else if (uriString.contains('/profile')) {
       currentIndex = 2;
+    } else {
+      // Beamer.of(context).beamToReplacementNamed('/unknown');
     }
   }
 
@@ -87,7 +89,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
-            label: "Теория",
+            label: "База знаний",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),

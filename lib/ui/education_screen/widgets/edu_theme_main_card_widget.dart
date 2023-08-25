@@ -1,8 +1,8 @@
 import 'package:beamer/beamer.dart';
+import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
+import 'package:eestech_challenge_app/domain/models/edu_lesson_model.dart';
 import 'package:flutter/material.dart';
 import 'package:progresso/progresso.dart';
-
-import '../../../examples_for_testing/edu_themes_examples.dart';
 
 class EduThemeMainCardWidget extends StatelessWidget {
   const EduThemeMainCardWidget({
@@ -38,6 +38,10 @@ class EduThemeMainCardWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(MyColors.blueOnLogo),
+                      ),
                       onPressed: () {
                         Beamer.of(context).beamToNamed(
                             '/education/theory/${eduThemeItem.id}');
@@ -59,6 +63,10 @@ class EduThemeMainCardWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(MyColors.blueOnLogo),
+                      ),
                       onPressed: () {},
                       child: const Text('Играть!'),
                     ),

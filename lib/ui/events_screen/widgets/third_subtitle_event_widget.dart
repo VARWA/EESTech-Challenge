@@ -1,3 +1,4 @@
+import 'package:eestech_challenge_app/domain/models/event_model.dart';
 import 'package:eestech_challenge_app/examples_for_testing/events_examples.dart';
 import 'package:flutter/material.dart';
 

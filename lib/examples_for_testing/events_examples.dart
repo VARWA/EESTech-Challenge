@@ -1,3 +1,5 @@
+import 'package:eestech_challenge_app/domain/models/event_model.dart';
+
 class EventExampleList {
   final List<Event> eventsExampleList = [
     Event(
@@ -55,31 +57,4 @@ class EventExampleList {
   ];
 
   List<Event> get eventsExample => eventsExampleList;
-}
-
-class Event {
-  int id;
-  String title;
-  String startDate;
-  String endDate;
-  int points;
-  String place;
-  String description;
-  String startTime;
-  String endTime;
-  Object photo;
-  String bonuses;
-
-  Event(
-      {required this.id,
-      required this.title,
-      required this.startDate,
-      required this.endDate,
-      required this.points,
-      required this.place,
-      required this.description,
-      required this.startTime,
-      required this.endTime,
-      required this.photo,
-      required this.bonuses});
 }

@@ -1,3 +1,6 @@
+import 'package:eestech_challenge_app/domain/models/edu_lesson_model.dart';
+import 'package:eestech_challenge_app/domain/models/edu_theme_module_model.dart';
+
 class EduThemeExamples {
   static List<EduLesson> eduThemesList = [
     EduLesson(
@@ -33,34 +36,6 @@ class EduThemeExamples {
   ];
 }
 
-class EduLesson {
-  final int id;
-  final String title;
-  final int theoryProgress;
-  final int gameProgress;
-
-  EduLesson(
-      {required this.id,
-      required this.title,
-      required this.theoryProgress,
-      required this.gameProgress});
-}
-
-class EduThemeTheoryModules {
-  final int id;
-  final String name;
-  final List<EduThemeModule> modulesList;
-
-  final int progress;
-
-  EduThemeTheoryModules({
-    required this.id,
-    required this.name,
-    required this.progress,
-    required this.modulesList,
-  });
-}
-
 abstract class EduThemeModuleExamples {
   static List<EduThemeModule> mainList = [
     EduThemeModule(
@@ -79,16 +54,4 @@ abstract class EduThemeModuleExamples {
       isCompleted: true,
     )
   ];
-}
-
-class EduThemeModule {
-  final int id;
-  final String name;
-  final bool isCompleted;
-
-  EduThemeModule({
-    required this.id,
-    required this.name,
-    required this.isCompleted,
-  });
 }

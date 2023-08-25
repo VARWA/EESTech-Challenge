@@ -1,9 +1,9 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 import 'my_app/app.dart';
 
 void main() {
-  setUrlStrategy(PathUrlStrategy());
+  Beamer.setPathUrlStrategy();
   runApp(MyApp());
 }

@@ -1,3 +1,5 @@
+import 'package:beamer/beamer.dart';
+import 'package:eestech_challenge_app/domain/models/event_model.dart';
 import 'package:eestech_challenge_app/ui/events_screen/widgets/first_subtitle_event_widget.dart';
 import 'package:eestech_challenge_app/ui/events_screen/widgets/fourth_subtitle_event_widget.dart';
 import 'package:eestech_challenge_app/ui/events_screen/widgets/lock_widget.dart';
@@ -5,8 +7,6 @@ import 'package:eestech_challenge_app/ui/events_screen/widgets/main_title_event_
 import 'package:eestech_challenge_app/ui/events_screen/widgets/second_subtitle_event_widget.dart';
 import 'package:eestech_challenge_app/ui/events_screen/widgets/third_subtitle_event_widget.dart';
 import 'package:flutter/material.dart';
-
-import '../../../examples_for_testing/events_examples.dart';
 
 class EventOnListWidget extends StatelessWidget {
   final Event event;
@@ -47,26 +47,33 @@ class EventOnListWidget extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),
             ),
+            clipBehavior: Clip.hardEdge,
             surfaceTintColor: Theme.of(context).cardTheme.surfaceTintColor,
             elevation: 7,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 19, right: 9),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 13),
-                  MainTitleEventWidget(event: event),
-                  const SizedBox(height: 5),
-                  FirstSubtitleEventWidget(
-                      event: event, subTitleStyle: _subTitleStyle),
-                  SecondSubtitleEventWidget(
-                      finalDate: finalDate, subTitleStyle: _subTitleStyle),
-                  ThirdSubtitleEventWidget(
-                      event: event, subTitleStyle: _subTitleStyle),
-                  FourthSubtitleEventWidget(
-                      event: event, subTitleStyle: _subTitleStyle),
-                  const SizedBox(height: 5),
-                ],
+            child: InkWell(
+              onTap: () {
+                Beamer.of(context).beamToNamed('/unknown');
+                print('opened');
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(left: 19, right: 9),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 13),
+                    MainTitleEventWidget(event: event),
+                    const SizedBox(height: 5),
+                    FirstSubtitleEventWidget(
+                        event: event, subTitleStyle: _subTitleStyle),
+                    SecondSubtitleEventWidget(
+                        finalDate: finalDate, subTitleStyle: _subTitleStyle),
+                    ThirdSubtitleEventWidget(
+                        event: event, subTitleStyle: _subTitleStyle),
+                    FourthSubtitleEventWidget(
+                        event: event, subTitleStyle: _subTitleStyle),
+                    const SizedBox(height: 5),
+                  ],
+                ),
               ),
             ),
           ),
