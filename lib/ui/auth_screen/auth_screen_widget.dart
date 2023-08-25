@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AuthWidget extends StatefulWidget {
-  const AuthWidget({Key? key}) : super(key: key);
+class AuthScreenWidget extends StatefulWidget {
+  const AuthScreenWidget({Key? key}) : super(key: key);
 
   @override
-  State<AuthWidget> createState() => _AuthWidgetState();
+  State<AuthScreenWidget> createState() => _AuthScreenWidgetState();
 }
 
-class _AuthWidgetState extends State<AuthWidget> {
+class _AuthScreenWidgetState extends State<AuthScreenWidget> {
   final _loginController = TextEditingController(text: 'admin');
   final _passwordController = TextEditingController(text: 'admin');
 
@@ -15,7 +15,7 @@ class _AuthWidgetState extends State<AuthWidget> {
     final login = _loginController.text;
     final password = _passwordController.text;
     if (login == 'admin' && password == 'admin') {
-      Navigator.of(context).pushReplacementNamed('/main_screen/');
+      // context.router.pushNamed('/main-screen');
     } else {
       // const errorText = "Неверный логин или пароль";
     }

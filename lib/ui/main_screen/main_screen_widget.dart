@@ -1,9 +1,9 @@
+import 'package:beamer/beamer.dart';
+import 'package:eestech_challenge_app/config/router/education_beam_location.dart';
+import 'package:eestech_challenge_app/config/router/events_beam_location.dart';
+import 'package:eestech_challenge_app/config/router/profile_beam_location.dart';
 import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
-import 'package:eestech_challenge_app/ui/education_screen/education_main_screen_widget.dart';
 import 'package:flutter/material.dart';
-
-import '../events_screen/events_main_screen_widget.dart';
-import '../user_info/user_info_widget.dart';
 
 class MainScreenWidget extends StatefulWidget {
   const MainScreenWidget({Key? key}) : super(key: key);
@@ -13,42 +13,93 @@ class MainScreenWidget extends StatefulWidget {
 }
 
 class _MainScreenWidgetState extends State<MainScreenWidget> {
-  int _selectedTab = 0;
+  late int currentIndex;
 
-  void onSelectedTab(int index) {
-    if (_selectedTab == index) return;
-    setState(() {
-      _selectedTab = index;
-    });
+  final routerDelegates = [
+    BeamerDelegate(
+      initialPath: '/events',
+      locationBuilder: (routeInformation, _) {
+        if (routeInformation.location!.contains('events')) {
+          return EventsLocation(routeInformation);
+        }
+        return NotFound(path: routeInformation.location!);
+      },
+    ),
+    BeamerDelegate(
+      initialPath: '/education',
+      locationBuilder: (routeInformation, _) {
+        if (routeInformation.location!.contains('education')) {
+          return EducationLocation(routeInformation);
+        }
+        return NotFound(path: routeInformation.location!);
+      },
+    ),
+    BeamerDelegate(
+      initialPath: '/profile',
+      locationBuilder: (routeInformation, _) {
+        if (routeInformation.location!.contains('profile')) {
+          return ProfileLocation(routeInformation);
+        }
+        return NotFound(path: routeInformation.location!);
+      },
+    ),
+  ];
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final uriString = Beamer.of(context).configuration.location!;
+    if (uriString.contains('/events')) {
+      currentIndex = 0;
+    } else if (uriString.contains('/education')) {
+      currentIndex = 1;
+    } else if (uriString.contains('/profile')) {
+      currentIndex = 2;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
-        index: _selectedTab,
-        children: const [
-          EventsMainScreen(),
-          // Text("Задачи"),
-          MainListOfEducationWidget(),
-          UserInfoWidget(),
+        index: currentIndex,
+        children: [
+          Beamer(
+            routerDelegate: routerDelegates[0],
+          ),
+          Beamer(
+            routerDelegate: routerDelegates[1],
+          ),
+          Beamer(
+            routerDelegate: routerDelegates[2],
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedTab,
+        backgroundColor: MyColors.surfaceColor,
         unselectedItemColor: MyColors.blueOnLogo,
         selectedItemColor: MyColors.redOnLogo,
+        currentIndex: currentIndex,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.access_alarm_outlined), label: 'События'),
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.task_alt_outlined), label: "Задачи"),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Теория"),
+            icon: Icon(Icons.access_alarm_outlined),
+            label: 'События',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle_outlined), label: "Профиль"),
+            icon: Icon(Icons.book),
+            label: "Теория",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_outlined),
+            label: "Профиль",
+          ),
         ],
-        backgroundColor: const Color.fromRGBO(230, 230, 230, 1),
-        onTap: onSelectedTab,
+        onTap: (index) {
+          if (index != currentIndex) {
+            setState(() => currentIndex = index);
+            routerDelegates[currentIndex].update(rebuild: false);
+          }
+        },
       ),
     );
   }

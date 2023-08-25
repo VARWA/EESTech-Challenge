@@ -1,4 +1,4 @@
-import 'package:eestech_challenge_app/ui/main_theory_module_screen/main_theory_module_screen_widget.dart';
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:progresso/progresso.dart';
 
@@ -39,16 +39,8 @@ class EduThemeMainCardWidget extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return MainTheoryModuleScreenWidget(
-                                id: eduThemeItem.id,
-                              );
-                            },
-                          ),
-                        );
+                        Beamer.of(context).beamToNamed(
+                            '/education/theory/${eduThemeItem.id}');
                       },
                       child: const Text('Теория'),
                     ),

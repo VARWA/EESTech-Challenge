@@ -13,19 +13,32 @@ class MainTitleEventWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      event.title,
-      // https://medium.com/@pinkesh.earth/flutter-quick-tip-how-to-set-text-background-color-with-curve-d40a2f96a415
-      style: TextStyle(
-        fontWeight: FontWeight.w700,
-        fontSize: 25,
-        background: Paint()
-          ..strokeWidth = 10.0
-          ..color = MyColors.colorOfTextsBackground1
-          ..style = PaintingStyle.stroke
-          ..strokeJoin = StrokeJoin.round,
-        // backgroundColor: Mycolors.ColorOfTextsBackground1
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: MyColors.titleBackground1,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 8.0,
+              vertical: 3,
+            ),
+            child: Text(
+              event.title,
+              style: const TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 25,
+              ),
+            ),
+          ),
+        ),
+        const Icon(
+          Icons.navigate_next,
+        ),
+      ],
     );
   }
 }

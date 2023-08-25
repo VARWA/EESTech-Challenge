@@ -1,34 +1,30 @@
+import 'package:beamer/beamer.dart';
+import 'package:eestech_challenge_app/config/theme/light_theme.dart';
 import 'package:eestech_challenge_app/ui/main_screen/main_screen_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../ui/auth_screen/auth_screen_widget.dart';
-import '../ui/events_screen/widgets/event_screen_info.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  final routerDelegate = BeamerDelegate(
+    initialPath: '/books',
+    locationBuilder: RoutesLocationBuilder(
+      routes: {
+        '*': (context, state, data) => const MainScreenWidget(),
+      },
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routes: {
-        '/auth_screen/': (context) => const AuthWidget(),
-        '/main_screen/': (context) => const MainScreenWidget(),
-        '/main_screen/event_info': (context) {
-          final index = ModalRoute.of(context)?.settings.arguments;
-          return EventScreenInfo(index: index);
-        }
-      },
-      initialRoute: '/auth_screen/',
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xff232935), //t
-        textTheme: GoogleFonts.interTextTheme(),
-        colorSchemeSeed: Colors.green,
-        useMaterial3: true,
+      routerDelegate: routerDelegate,
+      routeInformationParser: BeamerParser(),
+      backButtonDispatcher: BeamerBackButtonDispatcher(
+        delegate: routerDelegate,
       ),
-      home: Container(color: Colors.red),
+      theme: lightTheme,
+      darkTheme: ThemeData.dark(),
     );
   }
 }

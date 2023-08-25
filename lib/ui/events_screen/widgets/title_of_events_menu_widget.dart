@@ -13,7 +13,7 @@ class TitleOfEventsMenu extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SvgPicture.asset('images/other/logo.svg'),
+        // SvgPicture.asset('images/other/logo.svg'),
         const SizedBox(height: 40),
         // SizedBox(height: 52),
         Container(

@@ -1,26 +1,11 @@
-import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-import '../../examples_for_testing/edu_themes_examples.dart';
+import '../../../config/theme/theme_colors.dart';
+import '../../../examples_for_testing/edu_themes_examples.dart';
 
-class UserInfoWidget extends StatelessWidget {
-  const UserInfoWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        SizedBox(height: 30),
-        Divider(),
-        RadarChartSample1(),
-      ],
-    );
-  }
-}
-
-class RadarChartSample1 extends StatefulWidget {
-  const RadarChartSample1({super.key});
+class RadarChartWidget extends StatefulWidget {
+  const RadarChartWidget({super.key});
 
   final gridColor = Colors.white;
   final titleColor = Colors.white10;
@@ -28,10 +13,10 @@ class RadarChartSample1 extends StatefulWidget {
   final artColor = MyColors.redOnLogo;
 
   @override
-  State<RadarChartSample1> createState() => _RadarChartSample1State();
+  State<RadarChartWidget> createState() => _RadarChartSample1State();
 }
 
-class _RadarChartSample1State extends State<RadarChartSample1> {
+class _RadarChartSample1State extends State<RadarChartWidget> {
   int selectedDataSetIndex = -1;
   double angleValue = 0;
   bool relativeAngleMode = true;
