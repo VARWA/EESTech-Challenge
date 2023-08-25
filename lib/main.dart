@@ -5,6 +5,5 @@ import 'my_app/app.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
-  var app = MyApp();
-  runApp(app);
+  runApp(MyApp());
 }

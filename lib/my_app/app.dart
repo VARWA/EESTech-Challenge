@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
   final routerDelegate = BeamerDelegate(
-    initialPath: '/books',
+    initialPath: '/events',
     locationBuilder: RoutesLocationBuilder(
       routes: {
         '*': (context, state, data) => const MainScreenWidget(),
