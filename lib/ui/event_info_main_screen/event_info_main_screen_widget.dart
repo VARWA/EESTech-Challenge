@@ -14,119 +14,120 @@ class EventInfoMainScreenWidget extends StatelessWidget {
         .firstWhere((event) => id == event.id);
     return Scaffold(
       backgroundColor: const Color.fromRGBO(230, 230, 230, 1),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 196,
-            color: Theme.of(context).scaffoldBackgroundColor,
-          ),
-          SizedBox(
-            width: double.infinity,
-            height: 194,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 37, top: 25),
-                  child: Text(
-                    event.title,
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 40,
-                      fontWeight: FontWeight.w700,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 21),
-                  child: MetaInfoWidget(event: event),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 45.0,
-                    top: 19,
-                    bottom: 19,
-                  ),
-                  child: ElevatedButton(
-                    style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(
-                          Color.fromRGBO(211, 217, 228, 1),
-                        ),
-                        elevation: MaterialStatePropertyAll(0)),
-                    onPressed: () {},
-                    child: const Text(
-                      'Участвовать',
-                      style: TextStyle(
-                        color: Color.fromRGBO(132, 56, 255, 1),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 196,
+              color: Theme.of(context).scaffoldBackgroundColor,
             ),
-          ),
-          DefaultTabController(
-            length: 2,
-            child: Column(
-              children: [
-                const TabBar(
-                  indicatorColor: Color.fromRGBO(132, 56, 255, 1),
-                  tabs: [
-                    Text(
-                      'Описание',
-                      style: TextStyle(
+            SizedBox(
+              width: double.infinity,
+              height: 194,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 37, top: 25),
+                    child: Text(
+                      event.title,
+                      style: const TextStyle(
                         color: Colors.black,
+                        fontSize: 40,
+                        fontWeight: FontWeight.w700,
+                        decoration: TextDecoration.underline,
                       ),
                     ),
-                    Text(
-                      'Правила',
-                      style: TextStyle(
-                        color: Colors.black,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 21),
+                    child: MetaInfoWidget(event: event),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 45.0,
+                      top: 19,
+                      bottom: 19,
+                    ),
+                    child: ElevatedButton(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                            Color.fromRGBO(211, 217, 228, 1),
+                          ),
+                          elevation: MaterialStatePropertyAll(0)),
+                      onPressed: () {},
+                      child: const Text(
+                        'Участвовать',
+                        style: TextStyle(
+                          color: Color.fromRGBO(132, 56, 255, 1),
+                        ),
                       ),
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: 100,
-                  child: TabBarView(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          top: 15,
-                          left: 50,
-                          right: 50,
-                        ),
-                        child: Text(
-                          event.fullDescription,
-                          style: const TextStyle(
-                            color: Colors.black,
-                          ),
-                          textAlign: TextAlign.justify,
+                  ),
+                ],
+              ),
+            ),
+            DefaultTabController(
+              length: 2,
+              child: Column(
+                children: [
+                  const TabBar(
+                    indicatorColor: Color.fromRGBO(132, 56, 255, 1),
+                    tabs: [
+                      Text(
+                        'Описание',
+                        style: TextStyle(
+                          color: Colors.black,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          top: 15,
-                          left: 50,
-                          right: 50,
-                        ),
-                        child: Text(
-                          event.rules,
-                          style: const TextStyle(
-                            color: Colors.black,
-                          ),
-                          textAlign: TextAlign.justify,
+                      Text(
+                        'Правила',
+                        style: TextStyle(
+                          color: Colors.black,
                         ),
                       ),
                     ],
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
+                  Container(height: 1000,
+                    child: TabBarView(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 15,
+                            left: 50,
+                            right: 50,
+                          ),
+                          child: Text(
+                            event.fullDescription,
+                            style: const TextStyle(
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 15,
+                            left: 50,
+                            right: 50,
+                          ),
+                          child: Text(
+                            event.rules,
+                            style: const TextStyle(
+                              color: Colors.black,
+                            ),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
