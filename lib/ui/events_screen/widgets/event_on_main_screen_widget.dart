@@ -52,8 +52,7 @@ class EventOnListWidget extends StatelessWidget {
             elevation: 7,
             child: InkWell(
               onTap: () {
-                Beamer.of(context).beamToNamed('/unknown');
-                print('opened');
+                Beamer.of(context).beamToNamed('/events/${event.id}');
               },
               child: Padding(
                 padding: const EdgeInsets.only(left: 19, right: 9),

@@ -1,4 +1,5 @@
 import 'package:beamer/beamer.dart';
+import 'package:eestech_challenge_app/ui/event_info_main_screen/event_info_main_screen_widget.dart';
 import 'package:eestech_challenge_app/ui/events_screen/events_screen_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -6,24 +7,32 @@ class EventsLocation extends BeamLocation<BeamState> {
   EventsLocation(super.routeInformation);
 
   @override
-  List<String> get pathPatterns => ['/*'];
+  List<String> get pathPatterns => ['/events/:eventId'];
 
   @override
-  List<BeamPage> buildPages(BuildContext context, BeamState state) => [
-        const BeamPage(
-          key: ValueKey('events'),
-          title: 'События',
-          type: BeamPageType.noTransition,
-          child: EventsScreen(
-              // label: 'A',
-              // detailsPath: '/a/details',
-              ),
-        ),
-        // if (state.uri.pathSegments.length == 2)
-        //   const BeamPage(
-        //     key: ValueKey('a/details'),
-        //     title: 'Details A',
-        //     child: DetailsScreen(label: 'A'),
-        //   ),
-      ];
+  List<BeamPage> buildPages(BuildContext context, BeamState state) {
+    List<BeamPage> pages = [
+      const BeamPage(
+        key: ValueKey('events'),
+        title: 'События',
+        type: BeamPageType.noTransition,
+        child: EventsScreen(),
+      ),
+    ];
+    final String? stringEventsId = state.pathParameters['eventId'];
+
+    if (state.uri.pathSegments.length == 2 && stringEventsId != null) {
+      final int? eventId = int.tryParse(stringEventsId);
+      if (eventId != null) {
+        pages.add(
+          BeamPage(
+            key: ValueKey('events/$eventId'),
+            title: 'Событие',
+            child: EventInfoMainScreenWidget(id: eventId),
+          ),
+        );
+      }
+    }
+    return pages;
+  }
 }
