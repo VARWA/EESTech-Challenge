@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:beamer/beamer.dart';
 import 'package:eestech_challenge_app/ui/education_screen/education_screen_widget.dart';
 import 'package:eestech_challenge_app/ui/main_theory_module_screen/main_theory_module_screen_widget.dart';
+import 'package:eestech_challenge_app/ui/theory_article_screen/theory_article_screen_widget.dart';
 import 'package:flutter/material.dart';
 
 class EducationLocation extends BeamLocation<BeamState> {
@@ -52,7 +53,7 @@ class EducationLocation extends BeamLocation<BeamState> {
                   title: 'Теория по модулю',
                   child: const Scaffold(
                     body: Center(
-                      child: Text('Страница с теорией'),
+                      child: TheoryArticleScreenWidget(),
                     ),
                   ),
                 ),

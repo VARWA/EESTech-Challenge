@@ -1,5 +1,5 @@
 import 'package:beamer/beamer.dart';
-import 'package:eestech_challenge_app/ui/event_info_main_screen/event_info_main_screen_widget.dart';
+import 'package:eestech_challenge_app/ui/event_info_screen/event_info_screen_widget.dart';
 import 'package:eestech_challenge_app/ui/events_screen/events_screen_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +28,7 @@ class EventsLocation extends BeamLocation<BeamState> {
           BeamPage(
             key: ValueKey('events/$eventId'),
             title: 'Событие',
-            child: EventInfoMainScreenWidget(id: eventId),
+            child: EventInfoScreenWidget(id: eventId),
           ),
         );
       }
