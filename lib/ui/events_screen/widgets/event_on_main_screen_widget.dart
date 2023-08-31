@@ -19,20 +19,12 @@ class EventOnListWidget extends StatelessWidget {
 
   String _dateForFinalStringFormat({required event}) {
     return event.startDate != event.endDate
-        ? [event.startDate, event.endDate].join(" - ")
-        : event.startDate;
+        ? [event.startDate.toString(), event.endDate.toString()].join(" - ")
+        : event.startDate.toString();
   }
 
-  bool _checkIsEnded({required endDate}) {
-    final List<String> parsedEventDate = endDate.split('.');
-    final int year = int.parse('20${parsedEventDate[2]}');
-    final int month = int.parse(parsedEventDate[1]);
-    final int day = int.parse(parsedEventDate[0]);
-
-    final DateTime dateNow = DateTime.now();
-    final DateTime dateEvent = DateTime.utc(year, month, day);
-    return !dateNow.isBefore(dateEvent);
-  }
+  bool _checkIsEnded({required DateTime? endDate}) =>
+      endDate == null ? false : endDate.isBefore(DateTime.now());
 
   @override
   Widget build(BuildContext context) {

@@ -27,16 +27,14 @@ class EducationLocation extends BeamLocation<BeamState> {
     ];
     String? eduModule = state.pathParameters['eduModule'];
     String? stringContentId = state.pathParameters['contentId'];
-    String? stringEduTheoryModuleId = state.pathParameters['id'];
+    String? stringEduContentModuleId = state.pathParameters['id'];
     log(state.pathParameters.toString());
-    if (eduModule == 'theory' && stringEduTheoryModuleId != null) {
-      final int? eduTheoryModuleId = int.tryParse(stringEduTheoryModuleId);
+    if (eduModule == 'theory' && stringEduContentModuleId != null) {
+      final int? eduTheoryModuleId = int.tryParse(stringEduContentModuleId);
       if (eduTheoryModuleId != null) {
-        final int? eduTheoryModuleId = int.tryParse(stringEduTheoryModuleId);
-        if (eduTheoryModuleId != null) {
           pages.add(
             BeamPage(
-              key:  ValueKey('education/theory/$eduTheoryModuleId}'),
+              key: ValueKey('education/theory/$eduTheoryModuleId}'),
               title: 'Теория по модулю',
               child: MainTheoryModuleScreenWidget(
                 id: eduTheoryModuleId,
@@ -48,22 +46,47 @@ class EducationLocation extends BeamLocation<BeamState> {
             log('ContentId: $contentId');
             if (contentId != null) {
               pages.add(
-                 BeamPage(
-                  key: ValueKey('education/theory/$eduTheoryModuleId/$contentId'),
+                BeamPage(
+                  key: ValueKey(
+                      'education/theory/$eduTheoryModuleId/$contentId'),
                   title: 'Теория по модулю',
-                  child: const Scaffold(
-                    body: Center(
-                      child: TheoryArticleScreenWidget(),
-                    ),
-                  ),
+                  child: const TheoryArticleScreenWidget(),
+                ),
+              );
+            }
+
+        }
+      }
+    }
+    else if (eduModule == 'tests' && stringEduContentModuleId != null) {
+      final int? eduTestModuleId = int.tryParse(stringEduContentModuleId);
+      if (eduTestModuleId != null) {
+          pages.add(
+            BeamPage(
+              key: ValueKey('education/theory/$eduTestModuleId}'),
+              title: 'Теория по модулю',
+              child: MainTheoryModuleScreenWidget(
+                id: eduTestModuleId,
+              ),
+            ),
+          );
+          if (stringContentId != null) {
+            final int? contentId = int.tryParse(stringContentId);
+            log('ContentId: $contentId');
+            if (contentId != null) {
+              pages.add(
+                BeamPage(
+                  key: ValueKey(
+                      'education/theory/$eduTestModuleId/$contentId'),
+                  title: 'Теория по модулю',
+                  child: const TheoryArticleScreenWidget(),
                 ),
               );
             }
           }
-        }
+
       }
     }
-
     return pages;
   }
 }

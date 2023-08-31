@@ -1,12 +1,12 @@
-class EduLesson {
-  final int id;
-  final String title;
-  final int theoryProgress;
-  final int gameProgress;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  EduLesson(
-      {required this.id,
-      required this.title,
-      required this.theoryProgress,
-      required this.gameProgress});
+part 'edu_lesson_model.freezed.dart';
+@freezed
+class EduLesson with _$EduLesson {
+
+  const factory EduLesson(
+      {required int id,
+      required String title,
+      required int theoryProgress,
+      required int gameProgress}) = _EduLesson;
 }

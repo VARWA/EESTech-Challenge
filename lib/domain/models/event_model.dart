@@ -1,31 +1,22 @@
-class Event {
-  int id;
-  String title;
-  String startDate;
-  String endDate;
-  int points;
-  String place;
-  String description;
-  String startTime;
-  String endTime;
-  Object photo;
-  String bonuses;
-  String fullDescription;
-  String rules;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  Event({
-    required this.id,
-    required this.title,
-    required this.startDate,
-    required this.endDate,
-    required this.points,
-    required this.place,
-    required this.description,
-    required this.startTime,
-    required this.endTime,
-    required this.photo,
-    required this.bonuses,
-    this.fullDescription = '',
-    this.rules = '',
-  });
+part 'event_model.freezed.dart';
+
+@freezed
+class Event with _$Event {
+  factory Event({
+    required int id,
+    required String title,
+    required DateTime? startDate,
+    required DateTime? endDate,
+    required int points,
+    required String place,
+    required String description,
+    required DateTime startTime,
+    required DateTime endTime,
+    required Object photo,
+    required String bonuses,
+    @Default('') String fullDescription,
+    @Default('') String rules,
+  }) = _Event;
 }

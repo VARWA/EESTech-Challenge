@@ -36,7 +36,7 @@ class MetaInfoWidget extends StatelessWidget {
               color: Colors.black,
             ),
             Text(
-              event.startDate,
+              event.startDate.toString(),
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 15,

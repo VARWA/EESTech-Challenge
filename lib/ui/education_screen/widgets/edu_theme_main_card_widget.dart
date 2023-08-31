@@ -67,7 +67,10 @@ class EduThemeMainCardWidget extends StatelessWidget {
                         backgroundColor:
                             MaterialStateProperty.all(MyColors.blueOnLogo),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Beamer.of(context)
+                            .beamToNamed('/education/tests/${eduThemeItem.id}');
+                      },
                       child: const Text('Играть!'),
                     ),
                     const SizedBox(height: 15),
