@@ -7,8 +7,8 @@ class Event with _$Event {
   factory Event({
     required int id,
     required String title,
-    required DateTime? startDate,
-    required DateTime? endDate,
+    required DateTime startDate,
+    required DateTime endDate,
     required int points,
     required String place,
     required String description,

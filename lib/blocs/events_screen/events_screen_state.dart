@@ -1,28 +1,9 @@
 part of 'events_screen_bloc.dart';
 
-abstract class EventsScreenState extends Equatable {
-  @override
-  List<Object> get props => [];
-}
-
-class EventsScreenInitialState extends EventsScreenState {}
-
-class EventsScreenLoadingState extends EventsScreenState {}
-
-class EventsScreenGetEventsSuccessState extends EventsScreenState {
-  final List<Event> events;
-
-  EventsScreenGetEventsSuccessState(this.events);
-
-  @override
-  List<Object> get props => [events];
-}
-
-class EventsScreenErrorState extends EventsScreenState {
-  final String message;
-
-  EventsScreenErrorState(this.message);
-
-  @override
-  List<Object> get props => [message];
+@freezed
+class EventsScreenState with _$EventsScreenState {
+  const factory EventsScreenState.initial() = Initial;
+  const factory EventsScreenState.loading() = Loading;
+  const factory EventsScreenState.loaded(List<Event> events) = Loaded;
+  const factory EventsScreenState.error(String message) = Error;
 }

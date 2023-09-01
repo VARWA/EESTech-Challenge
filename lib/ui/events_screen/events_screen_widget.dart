@@ -18,25 +18,19 @@ class _EventsScreenState extends State<EventsScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
-      value: EventsScreenBloc()..add(EventsScreenGetEventsEvent()),
+      value: EventsScreenBloc()..add(const EventsScreenEvent.getEvents()),
       child: Scaffold(
         body: BlocBuilder<EventsScreenBloc, EventsScreenState>(
           builder: (context, state) {
-            if (state is EventsScreenErrorState) {
-              return Center(
-                child: Text(
-                  state.message,
-                  textAlign: TextAlign.center,
-                ),
-              );
-            }
-            if (state is EventsScreenGetEventsSuccessState) {
-              return ListView.builder(
+            return state.when(
+              initial: () => const CustomProgressIndicator(),
+              loading: () => const CustomProgressIndicator(),
+              loaded: (events) => ListView.builder(
                 scrollDirection: Axis.vertical,
                 // shrinkWrap: true,
-                itemCount: state.events.length,
+                itemCount: events.length,
                 itemBuilder: (BuildContext context, int index) {
-                  final event = state.events[index];
+                  final event = events[index];
                   if (index == 0) {
                     return Column(
                       children: [
@@ -72,9 +66,9 @@ class _EventsScreenState extends State<EventsScreen> {
                     ),
                   );
                 },
-              );
-            }
-            return const CustomProgressIndicator();
+              ),
+              error: (e) => Center(child: Text(e)),
+            );
           },
         ),
       ),

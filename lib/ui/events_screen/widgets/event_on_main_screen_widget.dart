@@ -6,6 +6,7 @@ import 'package:eestech_challenge_app/ui/events_screen/widgets/lock_widget.dart'
 import 'package:eestech_challenge_app/ui/events_screen/widgets/main_title_event_widget.dart';
 import 'package:eestech_challenge_app/ui/events_screen/widgets/second_subtitle_event_widget.dart';
 import 'package:eestech_challenge_app/ui/events_screen/widgets/third_subtitle_event_widget.dart';
+import 'package:eestech_challenge_app/ui/parsers/datetime_to_string_parser.dart';
 import 'package:flutter/material.dart';
 
 class EventOnListWidget extends StatelessWidget {
@@ -17,11 +18,15 @@ class EventOnListWidget extends StatelessWidget {
 
   const EventOnListWidget({Key? key, required this.event}) : super(key: key);
 
-  String _dateForFinalStringFormat({required event}) {
-    return event.startDate != event.endDate
-        ? [event.startDate.toString(), event.endDate.toString()].join(" - ")
-        : event.startDate.toString();
-  }
+  String _dateForFinalStringFormat({required Event event}) =>
+      event.startDate != event.endDate
+          ? DateTimeToStringParser.dateTimesToStringPeriod(
+              dateTime1: event.startDate,
+              dateTime2: event.endDate,
+            )
+          : DateTimeToStringParser.dateTimeToStringDate(
+              dateTime: event.startDate,
+            );
 
   bool _checkIsEnded({required DateTime? endDate}) =>
       endDate == null ? false : endDate.isBefore(DateTime.now());

@@ -1,28 +1,24 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:eestech_challenge_app/config/service_locator.dart';
 import 'package:eestech_challenge_app/domain/models/event_model.dart';
 import 'package:eestech_challenge_app/domain/repositories/events_repository.dart';
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'events_screen_bloc.freezed.dart';
 part 'events_screen_event.dart';
-
 part 'events_screen_state.dart';
 
 class EventsScreenBloc extends Bloc<EventsScreenEvent, EventsScreenState> {
-  EventsScreenBloc() : super(EventsScreenInitialState()) {
-    on<EventsScreenGetEventsEvent>(eventsScreenGetEventsEvent);
+  EventsScreenBloc() : super(const EventsScreenState.initial()) {
+    on<GetEvents>(_getEvents);
   }
-
-  FutureOr<void> eventsScreenGetEventsEvent(
-      EventsScreenGetEventsEvent event, Emitter<EventsScreenState> emit) async {
+  _getEvents(event, emit) {
     try {
-      emit(EventsScreenLoadingState());
+      emit(const EventsScreenState.loading());
       List<Event> events = serviceLocator<EventsRepository>().getEvents();
-      emit(EventsScreenGetEventsSuccessState(events));
+      emit(EventsScreenState.loaded(events));
     } catch (e) {
-      emit(EventsScreenErrorState('Something Went Wrong: $e'));
+      emit(EventsScreenState.error(e.toString()));
     }
   }
 }

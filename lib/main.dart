@@ -6,6 +6,7 @@ import 'my_app/app.dart';
 
 void main() {
   Beamer.setPathUrlStrategy();
+  WidgetsFlutterBinding.ensureInitialized();
   setup();
   runApp(MyApp());
 }

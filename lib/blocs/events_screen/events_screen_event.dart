@@ -1,10 +1,7 @@
 part of 'events_screen_bloc.dart';
 
-abstract class EventsScreenEvent extends Equatable {
-  const EventsScreenEvent();
-
-  @override
-  List<Object?> get props => [];
+@freezed
+class EventsScreenEvent with _$EventsScreenEvent {
+  const factory EventsScreenEvent.started() = Started;
+  const factory EventsScreenEvent.getEvents() = GetEvents;
 }
-
-class EventsScreenGetEventsEvent extends EventsScreenEvent {}
