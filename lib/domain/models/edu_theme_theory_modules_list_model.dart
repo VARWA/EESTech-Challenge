@@ -1,4 +1,3 @@
-
 import 'package:eestech_challenge_app/domain/models/edu_theme_module_model.dart';
 
 class EduThemeTheoryModulesList {

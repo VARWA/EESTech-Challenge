@@ -20,6 +20,8 @@ class EventInfoScreenBloc
     emit(const EventInfoScreenState.loading());
     Event? gotEvent =
         serviceLocator<EventsRepository>().getEventInfo(id: event.eventId);
-    gotEvent != null ? emit(EventInfoScreenState.loaded(gotEvent)) : emit(const UnknownPage());
+    gotEvent != null
+        ? emit(EventInfoScreenState.loaded(gotEvent))
+        : emit(const UnknownPage());
   }
 }

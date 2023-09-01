@@ -30,24 +30,24 @@ class MainTheoryModuleScreenWidget extends StatelessWidget {
             shrinkWrap: true,
             itemCount: itemsCount + 2,
             separatorBuilder: (BuildContext context, int index) =>
-            const SizedBox(height: 10),
+                const SizedBox(height: 10),
             itemBuilder: (BuildContext context, int index) {
               if (index == 0 || index == itemsCount + 1) {
                 return Container();
               }
               final EduThemeModule module =
-              theoryModules.modulesList[index - 1];
+                  theoryModules.modulesList[index - 1];
 
               return ListTile(
                 leading: module.isCompleted
                     ? const Icon(
-                  Icons.done,
-                  color: Colors.green,
-                )
+                        Icons.done,
+                        color: Colors.green,
+                      )
                     : const Icon(
-                  Icons.clear,
-                  color: Colors.red,
-                ),
+                        Icons.clear,
+                        color: Colors.red,
+                      ),
                 title: Text(module.name),
                 trailing: const Icon(Icons.navigate_next),
                 onTap: () {
