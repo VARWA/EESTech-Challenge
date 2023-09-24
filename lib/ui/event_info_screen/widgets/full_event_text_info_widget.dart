@@ -58,7 +58,7 @@ class _FullEventTextInfoWidgetState extends State<FullEventTextInfoWidget> {
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   decoration:
-                      (!showFullDescription) ? TextDecoration.underline : null,
+                      showFullDescription ? null: TextDecoration.underline,
                   decorationColor: decorationColor,
                 ),
               ),

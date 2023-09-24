@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'theory_article_screen_bloc.dart';
+part of 'quiz_screen_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,59 +15,58 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$TheoryArticleScreenEvent {
+mixin _$QuizScreenEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String articleId) getArticle,
+    required TResult Function() getQuiz,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String articleId)? getArticle,
+    TResult? Function()? getQuiz,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String articleId)? getArticle,
+    TResult Function()? getQuiz,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(GetArticle value) getArticle,
+    required TResult Function(GetQuiz value) getQuiz,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(GetArticle value)? getArticle,
+    TResult? Function(GetQuiz value)? getQuiz,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(GetArticle value)? getArticle,
+    TResult Function(GetQuiz value)? getQuiz,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TheoryArticleScreenEventCopyWith<$Res> {
-  factory $TheoryArticleScreenEventCopyWith(TheoryArticleScreenEvent value,
-          $Res Function(TheoryArticleScreenEvent) then) =
-      _$TheoryArticleScreenEventCopyWithImpl<$Res, TheoryArticleScreenEvent>;
+abstract class $QuizScreenEventCopyWith<$Res> {
+  factory $QuizScreenEventCopyWith(
+          QuizScreenEvent value, $Res Function(QuizScreenEvent) then) =
+      _$QuizScreenEventCopyWithImpl<$Res, QuizScreenEvent>;
 }
 
 /// @nodoc
-class _$TheoryArticleScreenEventCopyWithImpl<$Res,
-        $Val extends TheoryArticleScreenEvent>
-    implements $TheoryArticleScreenEventCopyWith<$Res> {
-  _$TheoryArticleScreenEventCopyWithImpl(this._value, this._then);
+class _$QuizScreenEventCopyWithImpl<$Res, $Val extends QuizScreenEvent>
+    implements $QuizScreenEventCopyWith<$Res> {
+  _$QuizScreenEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +82,7 @@ abstract class _$$StartedCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedCopyWithImpl<$Res>
-    extends _$TheoryArticleScreenEventCopyWithImpl<$Res, _$Started>
+    extends _$QuizScreenEventCopyWithImpl<$Res, _$Started>
     implements _$$StartedCopyWith<$Res> {
   __$$StartedCopyWithImpl(_$Started _value, $Res Function(_$Started) _then)
       : super(_value, _then);
@@ -96,7 +95,7 @@ class _$Started implements Started {
 
   @override
   String toString() {
-    return 'TheoryArticleScreenEvent.started()';
+    return 'QuizScreenEvent.started()';
   }
 
   @override
@@ -112,7 +111,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String articleId) getArticle,
+    required TResult Function() getQuiz,
   }) {
     return started();
   }
@@ -121,7 +120,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String articleId)? getArticle,
+    TResult? Function()? getQuiz,
   }) {
     return started?.call();
   }
@@ -130,7 +129,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String articleId)? getArticle,
+    TResult Function()? getQuiz,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -143,7 +142,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(GetArticle value) getArticle,
+    required TResult Function(GetQuiz value) getQuiz,
   }) {
     return started(this);
   }
@@ -152,7 +151,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(GetArticle value)? getArticle,
+    TResult? Function(GetQuiz value)? getQuiz,
   }) {
     return started?.call(this);
   }
@@ -161,7 +160,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(GetArticle value)? getArticle,
+    TResult Function(GetQuiz value)? getQuiz,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -171,99 +170,70 @@ class _$Started implements Started {
   }
 }
 
-abstract class Started implements TheoryArticleScreenEvent {
+abstract class Started implements QuizScreenEvent {
   const factory Started() = _$Started;
 }
 
 /// @nodoc
-abstract class _$$GetArticleCopyWith<$Res> {
-  factory _$$GetArticleCopyWith(
-          _$GetArticle value, $Res Function(_$GetArticle) then) =
-      __$$GetArticleCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String articleId});
+abstract class _$$GetQuizCopyWith<$Res> {
+  factory _$$GetQuizCopyWith(_$GetQuiz value, $Res Function(_$GetQuiz) then) =
+      __$$GetQuizCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetArticleCopyWithImpl<$Res>
-    extends _$TheoryArticleScreenEventCopyWithImpl<$Res, _$GetArticle>
-    implements _$$GetArticleCopyWith<$Res> {
-  __$$GetArticleCopyWithImpl(
-      _$GetArticle _value, $Res Function(_$GetArticle) _then)
+class __$$GetQuizCopyWithImpl<$Res>
+    extends _$QuizScreenEventCopyWithImpl<$Res, _$GetQuiz>
+    implements _$$GetQuizCopyWith<$Res> {
+  __$$GetQuizCopyWithImpl(_$GetQuiz _value, $Res Function(_$GetQuiz) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? articleId = null,
-  }) {
-    return _then(_$GetArticle(
-      articleId: null == articleId
-          ? _value.articleId
-          : articleId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$GetArticle implements GetArticle {
-  _$GetArticle({required this.articleId});
-
-  @override
-  final String articleId;
+class _$GetQuiz implements GetQuiz {
+  const _$GetQuiz();
 
   @override
   String toString() {
-    return 'TheoryArticleScreenEvent.getArticle(articleId: $articleId)';
+    return 'QuizScreenEvent.getQuiz()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetArticle &&
-            (identical(other.articleId, articleId) ||
-                other.articleId == articleId));
+        (other.runtimeType == runtimeType && other is _$GetQuiz);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, articleId);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetArticleCopyWith<_$GetArticle> get copyWith =>
-      __$$GetArticleCopyWithImpl<_$GetArticle>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String articleId) getArticle,
+    required TResult Function() getQuiz,
   }) {
-    return getArticle(articleId);
+    return getQuiz();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String articleId)? getArticle,
+    TResult? Function()? getQuiz,
   }) {
-    return getArticle?.call(articleId);
+    return getQuiz?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String articleId)? getArticle,
+    TResult Function()? getQuiz,
     required TResult orElse(),
   }) {
-    if (getArticle != null) {
-      return getArticle(articleId);
+    if (getQuiz != null) {
+      return getQuiz();
     }
     return orElse();
   }
@@ -272,50 +242,45 @@ class _$GetArticle implements GetArticle {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(GetArticle value) getArticle,
+    required TResult Function(GetQuiz value) getQuiz,
   }) {
-    return getArticle(this);
+    return getQuiz(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(GetArticle value)? getArticle,
+    TResult? Function(GetQuiz value)? getQuiz,
   }) {
-    return getArticle?.call(this);
+    return getQuiz?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(GetArticle value)? getArticle,
+    TResult Function(GetQuiz value)? getQuiz,
     required TResult orElse(),
   }) {
-    if (getArticle != null) {
-      return getArticle(this);
+    if (getQuiz != null) {
+      return getQuiz(this);
     }
     return orElse();
   }
 }
 
-abstract class GetArticle implements TheoryArticleScreenEvent {
-  factory GetArticle({required final String articleId}) = _$GetArticle;
-
-  String get articleId;
-  @JsonKey(ignore: true)
-  _$$GetArticleCopyWith<_$GetArticle> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class GetQuiz implements QuizScreenEvent {
+  const factory GetQuiz() = _$GetQuiz;
 }
 
 /// @nodoc
-mixin _$TheoryArticleScreenState {
+mixin _$QuizScreenState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(TheoryArticle theoryArticle) loaded,
+    required TResult Function(Quiz quiz) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -323,7 +288,7 @@ mixin _$TheoryArticleScreenState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(TheoryArticle theoryArticle)? loaded,
+    TResult? Function(Quiz quiz)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -331,7 +296,7 @@ mixin _$TheoryArticleScreenState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(TheoryArticle theoryArticle)? loaded,
+    TResult Function(Quiz quiz)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -364,17 +329,16 @@ mixin _$TheoryArticleScreenState {
 }
 
 /// @nodoc
-abstract class $TheoryArticleScreenStateCopyWith<$Res> {
-  factory $TheoryArticleScreenStateCopyWith(TheoryArticleScreenState value,
-          $Res Function(TheoryArticleScreenState) then) =
-      _$TheoryArticleScreenStateCopyWithImpl<$Res, TheoryArticleScreenState>;
+abstract class $QuizScreenStateCopyWith<$Res> {
+  factory $QuizScreenStateCopyWith(
+          QuizScreenState value, $Res Function(QuizScreenState) then) =
+      _$QuizScreenStateCopyWithImpl<$Res, QuizScreenState>;
 }
 
 /// @nodoc
-class _$TheoryArticleScreenStateCopyWithImpl<$Res,
-        $Val extends TheoryArticleScreenState>
-    implements $TheoryArticleScreenStateCopyWith<$Res> {
-  _$TheoryArticleScreenStateCopyWithImpl(this._value, this._then);
+class _$QuizScreenStateCopyWithImpl<$Res, $Val extends QuizScreenState>
+    implements $QuizScreenStateCopyWith<$Res> {
+  _$QuizScreenStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -390,7 +354,7 @@ abstract class _$$InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialCopyWithImpl<$Res>
-    extends _$TheoryArticleScreenStateCopyWithImpl<$Res, _$Initial>
+    extends _$QuizScreenStateCopyWithImpl<$Res, _$Initial>
     implements _$$InitialCopyWith<$Res> {
   __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
       : super(_value, _then);
@@ -403,7 +367,7 @@ class _$Initial implements Initial {
 
   @override
   String toString() {
-    return 'TheoryArticleScreenState.initial()';
+    return 'QuizScreenState.initial()';
   }
 
   @override
@@ -420,7 +384,7 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(TheoryArticle theoryArticle) loaded,
+    required TResult Function(Quiz quiz) loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -431,7 +395,7 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(TheoryArticle theoryArticle)? loaded,
+    TResult? Function(Quiz quiz)? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -442,7 +406,7 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(TheoryArticle theoryArticle)? loaded,
+    TResult Function(Quiz quiz)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -490,7 +454,7 @@ class _$Initial implements Initial {
   }
 }
 
-abstract class Initial implements TheoryArticleScreenState {
+abstract class Initial implements QuizScreenState {
   const factory Initial() = _$Initial;
 }
 
@@ -502,7 +466,7 @@ abstract class _$$LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingCopyWithImpl<$Res>
-    extends _$TheoryArticleScreenStateCopyWithImpl<$Res, _$Loading>
+    extends _$QuizScreenStateCopyWithImpl<$Res, _$Loading>
     implements _$$LoadingCopyWith<$Res> {
   __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
       : super(_value, _then);
@@ -515,7 +479,7 @@ class _$Loading implements Loading {
 
   @override
   String toString() {
-    return 'TheoryArticleScreenState.loading()';
+    return 'QuizScreenState.loading()';
   }
 
   @override
@@ -532,7 +496,7 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(TheoryArticle theoryArticle) loaded,
+    required TResult Function(Quiz quiz) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -543,7 +507,7 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(TheoryArticle theoryArticle)? loaded,
+    TResult? Function(Quiz quiz)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -554,7 +518,7 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(TheoryArticle theoryArticle)? loaded,
+    TResult Function(Quiz quiz)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -602,7 +566,7 @@ class _$Loading implements Loading {
   }
 }
 
-abstract class Loading implements TheoryArticleScreenState {
+abstract class Loading implements QuizScreenState {
   const factory Loading() = _$Loading;
 }
 
@@ -611,14 +575,14 @@ abstract class _$$LoadedCopyWith<$Res> {
   factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
       __$$LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({TheoryArticle theoryArticle});
+  $Res call({Quiz quiz});
 
-  $TheoryArticleCopyWith<$Res> get theoryArticle;
+  $QuizCopyWith<$Res> get quiz;
 }
 
 /// @nodoc
 class __$$LoadedCopyWithImpl<$Res>
-    extends _$TheoryArticleScreenStateCopyWithImpl<$Res, _$Loaded>
+    extends _$QuizScreenStateCopyWithImpl<$Res, _$Loaded>
     implements _$$LoadedCopyWith<$Res> {
   __$$LoadedCopyWithImpl(_$Loaded _value, $Res Function(_$Loaded) _then)
       : super(_value, _then);
@@ -626,21 +590,21 @@ class __$$LoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? theoryArticle = null,
+    Object? quiz = null,
   }) {
     return _then(_$Loaded(
-      null == theoryArticle
-          ? _value.theoryArticle
-          : theoryArticle // ignore: cast_nullable_to_non_nullable
-              as TheoryArticle,
+      null == quiz
+          ? _value.quiz
+          : quiz // ignore: cast_nullable_to_non_nullable
+              as Quiz,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $TheoryArticleCopyWith<$Res> get theoryArticle {
-    return $TheoryArticleCopyWith<$Res>(_value.theoryArticle, (value) {
-      return _then(_value.copyWith(theoryArticle: value));
+  $QuizCopyWith<$Res> get quiz {
+    return $QuizCopyWith<$Res>(_value.quiz, (value) {
+      return _then(_value.copyWith(quiz: value));
     });
   }
 }
@@ -648,14 +612,14 @@ class __$$LoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$Loaded implements Loaded {
-  const _$Loaded(this.theoryArticle);
+  const _$Loaded(this.quiz);
 
   @override
-  final TheoryArticle theoryArticle;
+  final Quiz quiz;
 
   @override
   String toString() {
-    return 'TheoryArticleScreenState.loaded(theoryArticle: $theoryArticle)';
+    return 'QuizScreenState.loaded(quiz: $quiz)';
   }
 
   @override
@@ -663,12 +627,11 @@ class _$Loaded implements Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Loaded &&
-            (identical(other.theoryArticle, theoryArticle) ||
-                other.theoryArticle == theoryArticle));
+            (identical(other.quiz, quiz) || other.quiz == quiz));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, theoryArticle);
+  int get hashCode => Object.hash(runtimeType, quiz);
 
   @JsonKey(ignore: true)
   @override
@@ -681,10 +644,10 @@ class _$Loaded implements Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(TheoryArticle theoryArticle) loaded,
+    required TResult Function(Quiz quiz) loaded,
     required TResult Function(String message) error,
   }) {
-    return loaded(theoryArticle);
+    return loaded(quiz);
   }
 
   @override
@@ -692,10 +655,10 @@ class _$Loaded implements Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(TheoryArticle theoryArticle)? loaded,
+    TResult? Function(Quiz quiz)? loaded,
     TResult? Function(String message)? error,
   }) {
-    return loaded?.call(theoryArticle);
+    return loaded?.call(quiz);
   }
 
   @override
@@ -703,12 +666,12 @@ class _$Loaded implements Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(TheoryArticle theoryArticle)? loaded,
+    TResult Function(Quiz quiz)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(theoryArticle);
+      return loaded(quiz);
     }
     return orElse();
   }
@@ -751,10 +714,10 @@ class _$Loaded implements Loaded {
   }
 }
 
-abstract class Loaded implements TheoryArticleScreenState {
-  const factory Loaded(final TheoryArticle theoryArticle) = _$Loaded;
+abstract class Loaded implements QuizScreenState {
+  const factory Loaded(final Quiz quiz) = _$Loaded;
 
-  TheoryArticle get theoryArticle;
+  Quiz get quiz;
   @JsonKey(ignore: true)
   _$$LoadedCopyWith<_$Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -770,7 +733,7 @@ abstract class _$$ErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorCopyWithImpl<$Res>
-    extends _$TheoryArticleScreenStateCopyWithImpl<$Res, _$Error>
+    extends _$QuizScreenStateCopyWithImpl<$Res, _$Error>
     implements _$$ErrorCopyWith<$Res> {
   __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
       : super(_value, _then);
@@ -799,7 +762,7 @@ class _$Error implements Error {
 
   @override
   String toString() {
-    return 'TheoryArticleScreenState.error(message: $message)';
+    return 'QuizScreenState.error(message: $message)';
   }
 
   @override
@@ -824,7 +787,7 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(TheoryArticle theoryArticle) loaded,
+    required TResult Function(Quiz quiz) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -835,7 +798,7 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(TheoryArticle theoryArticle)? loaded,
+    TResult? Function(Quiz quiz)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -846,7 +809,7 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(TheoryArticle theoryArticle)? loaded,
+    TResult Function(Quiz quiz)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -894,7 +857,7 @@ class _$Error implements Error {
   }
 }
 
-abstract class Error implements TheoryArticleScreenState {
+abstract class Error implements QuizScreenState {
   const factory Error(final String message) = _$Error;
 
   String get message;

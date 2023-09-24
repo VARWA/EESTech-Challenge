@@ -5,7 +5,7 @@ part 'event_model.freezed.dart';
 @freezed
 class Event with _$Event {
   factory Event({
-    required int id,
+    required String id,
     required String title,
     required DateTime startDate,
     required DateTime endDate,
@@ -14,7 +14,7 @@ class Event with _$Event {
     required String description,
     required DateTime startTime,
     required DateTime endTime,
-    required Object photo,
+    String? linkToPhoto,
     required String bonuses,
     @Default('') String fullDescription,
     @Default('') String rules,

@@ -22,34 +22,34 @@ class MainTheoryModuleScreenWidget extends StatelessWidget {
     );
     final int itemsCount = theoryModules.modulesList.length;
     return Scaffold(
-      appBar: AppBar(title: Text(theoryModules.name)),
+      appBar: AppBar(
+        title: Text(theoryModules.name),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Card(
+          color: Colors.white.withOpacity(0.15),
           child: ListView.separated(
             shrinkWrap: true,
-            itemCount: itemsCount + 2,
-            separatorBuilder: (BuildContext context, int index) =>
-                const SizedBox(height: 10),
+            itemCount: itemsCount,
+            separatorBuilder: (BuildContext context, int index) => SizedBox(
+              height: 10,
+              child: Divider(
+                color: Colors.white.withOpacity(0.5),
+              ),
+            ),
             itemBuilder: (BuildContext context, int index) {
-              if (index == 0 || index == itemsCount + 1) {
-                return Container();
-              }
-              final EduThemeModule module =
-                  theoryModules.modulesList[index - 1];
+              final EduThemeModule module = theoryModules.modulesList[index];
 
               return ListTile(
-                leading: module.isCompleted
-                    ? const Icon(
-                        Icons.done,
-                        color: Colors.green,
-                      )
-                    : const Icon(
-                        Icons.clear,
-                        color: Colors.red,
-                      ),
-                title: Text(module.name),
-                trailing: const Icon(Icons.navigate_next),
+                tileColor: Colors.transparent,
+                title: Text(
+                  module.name,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                trailing: const Icon(Icons.navigate_next, color: Colors.white70,),
                 onTap: () {
                   Beamer.of(context)
                       .beamToNamed('/education/theory/$id/${module.id}');

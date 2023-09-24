@@ -19,19 +19,19 @@ mixin _$EventInfoScreenEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int eventId) getInfo,
+    required TResult Function(String eventId) getInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int eventId)? getInfo,
+    TResult? Function(String eventId)? getInfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int eventId)? getInfo,
+    TResult Function(String eventId)? getInfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,7 +112,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int eventId) getInfo,
+    required TResult Function(String eventId) getInfo,
   }) {
     return started();
   }
@@ -121,7 +121,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int eventId)? getInfo,
+    TResult? Function(String eventId)? getInfo,
   }) {
     return started?.call();
   }
@@ -130,7 +130,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int eventId)? getInfo,
+    TResult Function(String eventId)? getInfo,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -182,7 +182,7 @@ abstract class _$$EventInfoScreenEventGetInfoEventCopyWith<$Res> {
           $Res Function(_$EventInfoScreenEventGetInfoEvent) then) =
       __$$EventInfoScreenEventGetInfoEventCopyWithImpl<$Res>;
   @useResult
-  $Res call({int eventId});
+  $Res call({String eventId});
 }
 
 /// @nodoc
@@ -204,7 +204,7 @@ class __$$EventInfoScreenEventGetInfoEventCopyWithImpl<$Res>
       eventId: null == eventId
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -216,7 +216,7 @@ class _$EventInfoScreenEventGetInfoEvent
   const _$EventInfoScreenEventGetInfoEvent({required this.eventId});
 
   @override
-  final int eventId;
+  final String eventId;
 
   @override
   String toString() {
@@ -246,7 +246,7 @@ class _$EventInfoScreenEventGetInfoEvent
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int eventId) getInfo,
+    required TResult Function(String eventId) getInfo,
   }) {
     return getInfo(eventId);
   }
@@ -255,7 +255,7 @@ class _$EventInfoScreenEventGetInfoEvent
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int eventId)? getInfo,
+    TResult? Function(String eventId)? getInfo,
   }) {
     return getInfo?.call(eventId);
   }
@@ -264,7 +264,7 @@ class _$EventInfoScreenEventGetInfoEvent
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int eventId)? getInfo,
+    TResult Function(String eventId)? getInfo,
     required TResult orElse(),
   }) {
     if (getInfo != null) {
@@ -307,10 +307,10 @@ class _$EventInfoScreenEventGetInfoEvent
 
 abstract class EventInfoScreenEventGetInfoEvent
     implements EventInfoScreenEvent {
-  const factory EventInfoScreenEventGetInfoEvent({required final int eventId}) =
-      _$EventInfoScreenEventGetInfoEvent;
+  const factory EventInfoScreenEventGetInfoEvent(
+      {required final String eventId}) = _$EventInfoScreenEventGetInfoEvent;
 
-  int get eventId;
+  String get eventId;
   @JsonKey(ignore: true)
   _$$EventInfoScreenEventGetInfoEventCopyWith<
           _$EventInfoScreenEventGetInfoEvent>

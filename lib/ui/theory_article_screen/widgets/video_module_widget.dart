@@ -1,3 +1,4 @@
+import 'package:eestech_challenge_app/config/theme/theme_colors.dart';
 import 'package:eestech_challenge_app/domain/models/theory_article_model.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
@@ -26,13 +27,14 @@ class _VideoModuleWidgetState extends State<VideoModuleWidget> {
     final String videoId = _getVideoID(widget.theoryArticle.videoUrl!);
     _controller = YoutubePlayerController.fromVideoId(
       params: const YoutubePlayerParams(
+        captionLanguage: 'RU',
+        interfaceLanguage: 'RU',
         mute: false,
         showControls: true,
         showFullscreenButton: true,
       ),
       videoId: videoId,
     );
-    print('Ссылка на видео ${widget.theoryArticle.videoUrl!}');
   }
 
   @override
@@ -57,11 +59,23 @@ class _VideoModuleWidgetState extends State<VideoModuleWidget> {
               controller: _controller,
               aspectRatio: 16 / 9,
             ),
-            const SizedBox(height: 15),
-            if (widget.theoryArticle.videoDescription != null)
-              Text(
-                widget.theoryArticle.videoDescription!,
-              )
+            (widget.theoryArticle.videoDescription != null)
+                ? Column(
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                        child: Divider(
+                          color: MyColors.blueOnLogo,
+                        ),
+                      ),
+                      Text(
+                        widget.theoryArticle.videoDescription!,
+                      ),
+                    ],
+                  )
+                : const SizedBox(
+                    height: 15,
+                  ),
           ],
         ),
       ),

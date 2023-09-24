@@ -10,7 +10,7 @@ class EventsRepository {
     return EventExampleList.eventsExampleList.map((e) => e).toList();
   }
 
-  Event? getEventInfo({required int id}) {
+  Event? getEventInfo({required String id}) {
     try {
       final Event event = EventExampleList.eventsExampleList
           .firstWhere((event) => event.id == id);

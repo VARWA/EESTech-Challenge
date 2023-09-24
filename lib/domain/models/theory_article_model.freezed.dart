@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TheoryArticle {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get videoUrl => throw _privateConstructorUsedError;
   String? get videoDescription => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ abstract class $TheoryArticleCopyWith<$Res> {
       _$TheoryArticleCopyWithImpl<$Res, TheoryArticle>;
   @useResult
   $Res call(
-      {int id,
+      {String id,
       String name,
       String? videoUrl,
       String? videoDescription,
@@ -67,7 +67,7 @@ class _$TheoryArticleCopyWithImpl<$Res, $Val extends TheoryArticle>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -101,7 +101,7 @@ abstract class _$$_TheoryArticleCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
+      {String id,
       String name,
       String? videoUrl,
       String? videoDescription,
@@ -131,7 +131,7 @@ class __$$_TheoryArticleCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -169,7 +169,7 @@ class _$_TheoryArticle implements _TheoryArticle {
       : _otherResources = otherResources;
 
   @override
-  final int id;
+  final String id;
   @override
   final String name;
   @override
@@ -229,7 +229,7 @@ class _$_TheoryArticle implements _TheoryArticle {
 
 abstract class _TheoryArticle implements TheoryArticle {
   const factory _TheoryArticle(
-      {required final int id,
+      {required final String id,
       required final String name,
       final String? videoUrl,
       final String? videoDescription,
@@ -237,7 +237,7 @@ abstract class _TheoryArticle implements TheoryArticle {
       final List<String>? otherResources}) = _$_TheoryArticle;
 
   @override
-  int get id;
+  String get id;
   @override
   String get name;
   @override

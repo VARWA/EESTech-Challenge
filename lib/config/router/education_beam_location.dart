@@ -2,7 +2,9 @@ import 'dart:developer';
 
 import 'package:beamer/beamer.dart';
 import 'package:eestech_challenge_app/ui/education_screen/education_screen_widget.dart';
+import 'package:eestech_challenge_app/ui/main_test_module_screen/main_test_module_screen_widget.dart';
 import 'package:eestech_challenge_app/ui/main_theory_module_screen/main_theory_module_screen_widget.dart';
+import 'package:eestech_challenge_app/ui/quiz_screen/quiz_screen_widget.dart';
 import 'package:eestech_challenge_app/ui/theory_article_screen/theory_article_screen_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +43,7 @@ class EducationLocation extends BeamLocation<BeamState> {
           ),
         );
         if (stringContentId != null) {
-          final int? contentId = int.tryParse(stringContentId);
+          final String? contentId = stringContentId;
           log('ContentId: $contentId');
           if (contentId != null) {
             pages.add(
@@ -57,27 +59,26 @@ class EducationLocation extends BeamLocation<BeamState> {
         }
       }
     } else if (eduModule == 'tests' && stringEduContentModuleId != null) {
-      final int? eduTestModuleId = int.tryParse(stringEduContentModuleId);
+      final String eduTestModuleId = stringEduContentModuleId;
       if (eduTestModuleId != null) {
         pages.add(
           BeamPage(
-            key: ValueKey('education/theory/$eduTestModuleId}'),
+            key: ValueKey('education/tests/$eduTestModuleId}'),
             title: 'Теория по модулю',
-            child: MainTheoryModuleScreenWidget(
+            child: MainTestModuleScreenWidget(
               id: eduTestModuleId,
             ),
           ),
         );
         if (stringContentId != null) {
-          final int? contentId = int.tryParse(stringContentId);
-          log('ContentId: $contentId');
+          final String? contentId = stringContentId;
           if (contentId != null) {
             pages.add(
               BeamPage(
                 key: ValueKey('education/theory/$eduTestModuleId/$contentId'),
                 title: 'Теория по модулю',
-                child: TheoryArticleScreenWidget(
-                  articleId: contentId,
+                child: QuizScreenWidget(
+                  themeId: contentId,
                 ),
               ),
             );

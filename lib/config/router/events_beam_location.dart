@@ -22,7 +22,7 @@ class EventsLocation extends BeamLocation<BeamState> {
     final String? stringEventsId = state.pathParameters['eventId'];
 
     if (state.uri.pathSegments.length == 2 && stringEventsId != null) {
-      final int? eventId = int.tryParse(stringEventsId);
+      final String? eventId = stringEventsId;
       if (eventId != null) {
         pages.add(
           BeamPage(

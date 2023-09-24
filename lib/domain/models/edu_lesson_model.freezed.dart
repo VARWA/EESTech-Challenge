@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$EduLesson {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   int get theoryProgress => throw _privateConstructorUsedError;
   int get gameProgress => throw _privateConstructorUsedError;
@@ -31,7 +31,7 @@ abstract class $EduLessonCopyWith<$Res> {
   factory $EduLessonCopyWith(EduLesson value, $Res Function(EduLesson) then) =
       _$EduLessonCopyWithImpl<$Res, EduLesson>;
   @useResult
-  $Res call({int id, String title, int theoryProgress, int gameProgress});
+  $Res call({String id, String title, int theoryProgress, int gameProgress});
 }
 
 /// @nodoc
@@ -56,7 +56,7 @@ class _$EduLessonCopyWithImpl<$Res, $Val extends EduLesson>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -80,7 +80,7 @@ abstract class _$$_EduLessonCopyWith<$Res> implements $EduLessonCopyWith<$Res> {
       __$$_EduLessonCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String title, int theoryProgress, int gameProgress});
+  $Res call({String id, String title, int theoryProgress, int gameProgress});
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ class __$$_EduLessonCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -130,7 +130,7 @@ class _$_EduLesson implements _EduLesson {
       required this.gameProgress});
 
   @override
-  final int id;
+  final String id;
   @override
   final String title;
   @override
@@ -169,13 +169,13 @@ class _$_EduLesson implements _EduLesson {
 
 abstract class _EduLesson implements EduLesson {
   const factory _EduLesson(
-      {required final int id,
+      {required final String id,
       required final String title,
       required final int theoryProgress,
       required final int gameProgress}) = _$_EduLesson;
 
   @override
-  int get id;
+  String get id;
   @override
   String get title;
   @override

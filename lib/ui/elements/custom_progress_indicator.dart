@@ -18,8 +18,9 @@ class _CustomProgressIndicatorState extends State<CustomProgressIndicator>
   @override
   void initState() {
     _controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 1500))
-      ..repeat();
+      vsync: this,
+      duration: const Duration(milliseconds: 1500),
+    )..repeat();
     super.initState();
   }
 

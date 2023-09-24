@@ -1,5 +1,5 @@
 class EduThemeModule {
-  final int id;
+  final String id;
   final String name;
   final bool isCompleted;
 

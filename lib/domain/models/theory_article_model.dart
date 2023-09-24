@@ -5,7 +5,7 @@ part 'theory_article_model.freezed.dart';
 @freezed
 class TheoryArticle with _$TheoryArticle {
   const factory TheoryArticle({
-    required int id,
+    required String id,
     required String name,
     String? videoUrl,
     String? videoDescription,

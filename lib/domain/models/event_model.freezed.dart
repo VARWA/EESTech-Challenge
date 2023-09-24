@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Event {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   DateTime get startDate => throw _privateConstructorUsedError;
   DateTime get endDate => throw _privateConstructorUsedError;
@@ -25,7 +25,7 @@ mixin _$Event {
   String get description => throw _privateConstructorUsedError;
   DateTime get startTime => throw _privateConstructorUsedError;
   DateTime get endTime => throw _privateConstructorUsedError;
-  Object get photo => throw _privateConstructorUsedError;
+  String? get linkToPhoto => throw _privateConstructorUsedError;
   String get bonuses => throw _privateConstructorUsedError;
   String get fullDescription => throw _privateConstructorUsedError;
   String get rules => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $EventCopyWith<$Res> {
       _$EventCopyWithImpl<$Res, Event>;
   @useResult
   $Res call(
-      {int id,
+      {String id,
       String title,
       DateTime startDate,
       DateTime endDate,
@@ -49,7 +49,7 @@ abstract class $EventCopyWith<$Res> {
       String description,
       DateTime startTime,
       DateTime endTime,
-      Object photo,
+      String? linkToPhoto,
       String bonuses,
       String fullDescription,
       String rules});
@@ -77,7 +77,7 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
     Object? description = null,
     Object? startTime = null,
     Object? endTime = null,
-    Object? photo = null,
+    Object? linkToPhoto = freezed,
     Object? bonuses = null,
     Object? fullDescription = null,
     Object? rules = null,
@@ -86,7 +86,7 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -119,7 +119,10 @@ class _$EventCopyWithImpl<$Res, $Val extends Event>
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      photo: null == photo ? _value.photo : photo,
+      linkToPhoto: freezed == linkToPhoto
+          ? _value.linkToPhoto
+          : linkToPhoto // ignore: cast_nullable_to_non_nullable
+              as String?,
       bonuses: null == bonuses
           ? _value.bonuses
           : bonuses // ignore: cast_nullable_to_non_nullable
@@ -143,7 +146,7 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
+      {String id,
       String title,
       DateTime startDate,
       DateTime endDate,
@@ -152,7 +155,7 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
       String description,
       DateTime startTime,
       DateTime endTime,
-      Object photo,
+      String? linkToPhoto,
       String bonuses,
       String fullDescription,
       String rules});
@@ -176,7 +179,7 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Event>
     Object? description = null,
     Object? startTime = null,
     Object? endTime = null,
-    Object? photo = null,
+    Object? linkToPhoto = freezed,
     Object? bonuses = null,
     Object? fullDescription = null,
     Object? rules = null,
@@ -185,7 +188,7 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Event>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -218,7 +221,10 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Event>
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      photo: null == photo ? _value.photo : photo,
+      linkToPhoto: freezed == linkToPhoto
+          ? _value.linkToPhoto
+          : linkToPhoto // ignore: cast_nullable_to_non_nullable
+              as String?,
       bonuses: null == bonuses
           ? _value.bonuses
           : bonuses // ignore: cast_nullable_to_non_nullable
@@ -248,13 +254,13 @@ class _$_Event implements _Event {
       required this.description,
       required this.startTime,
       required this.endTime,
-      required this.photo,
+      this.linkToPhoto,
       required this.bonuses,
       this.fullDescription = '',
       this.rules = ''});
 
   @override
-  final int id;
+  final String id;
   @override
   final String title;
   @override
@@ -272,7 +278,7 @@ class _$_Event implements _Event {
   @override
   final DateTime endTime;
   @override
-  final Object photo;
+  final String? linkToPhoto;
   @override
   final String bonuses;
   @override
@@ -284,7 +290,7 @@ class _$_Event implements _Event {
 
   @override
   String toString() {
-    return 'Event(id: $id, title: $title, startDate: $startDate, endDate: $endDate, points: $points, place: $place, description: $description, startTime: $startTime, endTime: $endTime, photo: $photo, bonuses: $bonuses, fullDescription: $fullDescription, rules: $rules)';
+    return 'Event(id: $id, title: $title, startDate: $startDate, endDate: $endDate, points: $points, place: $place, description: $description, startTime: $startTime, endTime: $endTime, linkToPhoto: $linkToPhoto, bonuses: $bonuses, fullDescription: $fullDescription, rules: $rules)';
   }
 
   @override
@@ -304,7 +310,8 @@ class _$_Event implements _Event {
             (identical(other.startTime, startTime) ||
                 other.startTime == startTime) &&
             (identical(other.endTime, endTime) || other.endTime == endTime) &&
-            const DeepCollectionEquality().equals(other.photo, photo) &&
+            (identical(other.linkToPhoto, linkToPhoto) ||
+                other.linkToPhoto == linkToPhoto) &&
             (identical(other.bonuses, bonuses) || other.bonuses == bonuses) &&
             (identical(other.fullDescription, fullDescription) ||
                 other.fullDescription == fullDescription) &&
@@ -323,7 +330,7 @@ class _$_Event implements _Event {
       description,
       startTime,
       endTime,
-      const DeepCollectionEquality().hash(photo),
+      linkToPhoto,
       bonuses,
       fullDescription,
       rules);
@@ -337,7 +344,7 @@ class _$_Event implements _Event {
 
 abstract class _Event implements Event {
   factory _Event(
-      {required final int id,
+      {required final String id,
       required final String title,
       required final DateTime startDate,
       required final DateTime endDate,
@@ -346,13 +353,13 @@ abstract class _Event implements Event {
       required final String description,
       required final DateTime startTime,
       required final DateTime endTime,
-      required final Object photo,
+      final String? linkToPhoto,
       required final String bonuses,
       final String fullDescription,
       final String rules}) = _$_Event;
 
   @override
-  int get id;
+  String get id;
   @override
   String get title;
   @override
@@ -370,7 +377,7 @@ abstract class _Event implements Event {
   @override
   DateTime get endTime;
   @override
-  Object get photo;
+  String? get linkToPhoto;
   @override
   String get bonuses;
   @override

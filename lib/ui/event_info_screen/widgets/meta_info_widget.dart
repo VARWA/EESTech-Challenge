@@ -19,12 +19,14 @@ class MetaInfoWidget extends StatelessWidget {
               Icons.timelapse_outlined,
               color: Colors.black,
             ),
-            Text(
-              event.description,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 15,
-                fontWeight: FontWeight.w700,
+            Flexible(
+              child: Text(
+                event.description,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ],
@@ -35,12 +37,14 @@ class MetaInfoWidget extends StatelessWidget {
               Icons.dangerous,
               color: Colors.black,
             ),
-            Text(
-              event.startDate.toString(),
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 15,
-                fontWeight: FontWeight.w700,
+            Flexible(
+              child: Text(
+                event.startDate.toString(),
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ],
