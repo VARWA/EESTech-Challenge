@@ -49,6 +49,7 @@ dependencies:
   youtube_player_iframe: ^4.0.4
   uuid: ^4.0.0
   cached_network_image: ^3.2.3
+  logging: ^1.2.0
 
 
 dev_dependencies:

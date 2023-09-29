@@ -7,10 +7,11 @@ import '../../../domain/models/quiz_model.dart';
 
 class QuizQuestionWidget extends StatelessWidget {
   final Quiz quiz;
-  final bool isLast;
 
-  const QuizQuestionWidget(
-      {super.key, required this.quiz, required this.isLast});
+  const QuizQuestionWidget({
+    super.key,
+    required this.quiz,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class QuizQuestionWidget extends StatelessWidget {
           child: SizedBox(
             width: double.infinity,
             child: Text(
-              quiz.stringQuestion * 6,
+              quiz.quizQuestions[0].stringQuestion,
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
@@ -30,10 +31,10 @@ class QuizQuestionWidget extends StatelessWidget {
             ),
           ),
         ),
-        if (quiz.imageQuestion != null)
-             CachedNetworkImage(imageUrl: quiz.imageQuestion!),
+        if (quiz.quizQuestions[0].imageQuestion != null)
+          CachedNetworkImage(imageUrl: quiz.quizQuestions[0].imageQuestion!),
         QuizAnswersListWidget(
-          quizItems: quiz.quizItems,
+          quizAnswers: quiz.quizQuestions[0].quizAnswers,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(
@@ -44,10 +45,11 @@ class QuizQuestionWidget extends StatelessWidget {
             children: [
               ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(MyColors.blueOnLogo)),
+                  backgroundColor:
+                      MaterialStateProperty.all(MyColors.blueOnLogo),
+                ),
                 onPressed: () {},
-                child: isLast
+                child: false
                     ? const Text('Закончить тест')
                     : const Row(
                         children: [

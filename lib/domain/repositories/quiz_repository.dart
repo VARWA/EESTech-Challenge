@@ -1,14 +1,17 @@
-import 'package:eestech_challenge_app/domain/models/quiz_item_model.dart';
-import 'package:eestech_challenge_app/domain/models/quiz_model.dart';
 import 'package:eestech_challenge_app/examples_for_testing/quiz_examples.dart';
-import 'package:eestech_challenge_app/examples_for_testing/quiz_items_examples.dart';
-import 'package:uuid/uuid.dart';
+import 'package:logging/logging.dart';
+
+import '../models/quiz_model.dart';
 
 class QuizRepository {
+  final log = Logger('Quiz repozitory');
+
   QuizRepository();
 
   Quiz getQuiz({required String id}) {
-    return QuizExamples.quizExample1;
+    final Quiz quiz = QuizExamples.quizExample1;
+    log.info('Got the result: ${quiz.toString()}');
+    return quiz;
 
     //   return TheoryArticles()
     //       .list

@@ -19,19 +19,19 @@ mixin _$QuizScreenEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getQuiz,
+    required TResult Function(String quizId) getQuiz,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getQuiz,
+    TResult? Function(String quizId)? getQuiz,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getQuiz,
+    TResult Function(String quizId)? getQuiz,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -111,7 +111,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getQuiz,
+    required TResult Function(String quizId) getQuiz,
   }) {
     return started();
   }
@@ -120,7 +120,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getQuiz,
+    TResult? Function(String quizId)? getQuiz,
   }) {
     return started?.call();
   }
@@ -129,7 +129,7 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getQuiz,
+    TResult Function(String quizId)? getQuiz,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -178,6 +178,8 @@ abstract class Started implements QuizScreenEvent {
 abstract class _$$GetQuizCopyWith<$Res> {
   factory _$$GetQuizCopyWith(_$GetQuiz value, $Res Function(_$GetQuiz) then) =
       __$$GetQuizCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String quizId});
 }
 
 /// @nodoc
@@ -186,54 +188,78 @@ class __$$GetQuizCopyWithImpl<$Res>
     implements _$$GetQuizCopyWith<$Res> {
   __$$GetQuizCopyWithImpl(_$GetQuiz _value, $Res Function(_$GetQuiz) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? quizId = null,
+  }) {
+    return _then(_$GetQuiz(
+      quizId: null == quizId
+          ? _value.quizId
+          : quizId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetQuiz implements GetQuiz {
-  const _$GetQuiz();
+  const _$GetQuiz({required this.quizId});
+
+  @override
+  final String quizId;
 
   @override
   String toString() {
-    return 'QuizScreenEvent.getQuiz()';
+    return 'QuizScreenEvent.getQuiz(quizId: $quizId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetQuiz);
+        (other.runtimeType == runtimeType &&
+            other is _$GetQuiz &&
+            (identical(other.quizId, quizId) || other.quizId == quizId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, quizId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetQuizCopyWith<_$GetQuiz> get copyWith =>
+      __$$GetQuizCopyWithImpl<_$GetQuiz>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getQuiz,
+    required TResult Function(String quizId) getQuiz,
   }) {
-    return getQuiz();
+    return getQuiz(quizId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getQuiz,
+    TResult? Function(String quizId)? getQuiz,
   }) {
-    return getQuiz?.call();
+    return getQuiz?.call(quizId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getQuiz,
+    TResult Function(String quizId)? getQuiz,
     required TResult orElse(),
   }) {
     if (getQuiz != null) {
-      return getQuiz();
+      return getQuiz(quizId);
     }
     return orElse();
   }
@@ -271,7 +297,12 @@ class _$GetQuiz implements GetQuiz {
 }
 
 abstract class GetQuiz implements QuizScreenEvent {
-  const factory GetQuiz() = _$GetQuiz;
+  const factory GetQuiz({required final String quizId}) = _$GetQuiz;
+
+  String get quizId;
+  @JsonKey(ignore: true)
+  _$$GetQuizCopyWith<_$GetQuiz> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
